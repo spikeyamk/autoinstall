@@ -21,6 +21,7 @@ genfstab -U /mnt >> /mnt/etc/genfstab
 
 
 #Configuring the system running everything in chroot
+genfstab -U /mnt >> /mnt/etc/genfstab
 arch-chroot /mnt
 pacman -Sy
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
@@ -61,10 +62,11 @@ read EFIPATH
 mount "$EFIPATH" /mnt/EFI
 pacman -S grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget
 
-TEST=$(grep -i vendor_id /proc/cpuinfo | sed '1,2d' | awk '{print $NF }')
+TEST=$(grep -i vendor_id /proc/cpuinfo | sed -n '$p' | awk '{print $NF }')
 printf "%s\n" "$TEST"
 
-if [ "$TEST" = "GenuineIntel" ];
+if [ "$TEST" = "GenuineIntel" ]
+	then
 		pacman -S intel-ucode
 	else 
 		pacman -S amd-ucode
@@ -116,10 +118,3 @@ then
 	umount -R /mnt
 	reboot
 fi
-
-
-
-
-
-
-
