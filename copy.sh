@@ -1,11 +1,6 @@
 #!/bin/bash
 
-
-
-
-
-#Configuring the system
-genfstab -U /mnt >> /mnt/etc/genfstab
+#Configuring the system running everything in chroot
 arch-chroot /mnt
 pacman -Sy
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
@@ -41,16 +36,18 @@ sed -i '82s/.//' /etc/sudoers
 
 # Installing GRUB bootloader
 mkdir /mnt/EFI
+echo -n "Specify [EFI partition] PATH: "
+read EFIPATH
 mount "$EFIPATH" /mnt/EFI
 pacman -S grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget
 
 TEST=$(grep -i vendor_id /proc/cpuinfo | sed '1,2d' | awk '{print $NF }')
 printf "%s\n" "$TEST"
 
-if [ "$TEST" = "GenuineIntel" ]
-	pacman -S intel-ucode
+if [ "$TEST" = "GenuineIntel" ];
+		pacman -S intel-ucode
 	else 
-	pacman -S amd-ucode
+		pacman -S amd-ucode
 fi
 
 function jumpto
@@ -99,10 +96,3 @@ then
 	umount -R /mnt
 	reboot
 fi
-
-
-
-
-
-
-
