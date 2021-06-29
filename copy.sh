@@ -89,12 +89,5 @@ grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
 systemctl enable fstrim.timer
 
-exit
 
-echo "Do you wish to reboot [y/n]?"
-read ans
-if [ "$ans" == "y" ]
-then
-	umount -R /mnt
-	reboot
-fi
+printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
