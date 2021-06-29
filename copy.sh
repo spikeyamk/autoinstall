@@ -87,6 +87,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # Enabling system services and daemons with systemd
 systemctl enable NetworkManager
 systemctl enable fstrim.timer
+systemctl enable reflector.timer
+
 
 
 printf "\e[1;32mDone! Type umount -a and reboot.\e[0m"
