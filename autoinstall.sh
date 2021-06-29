@@ -16,11 +16,11 @@ mkfs.ext4 "$ROOTPATH"
 # Base install starts
 mount "$ROOTPATH" /mnt
 pacstrap /mnt base linux linux-firmware base-devel
-
-
-
-#Configuring the system
 genfstab -U /mnt >> /mnt/etc/genfstab
+
+
+
+#Configuring the system running everything in chroot
 arch-chroot /mnt
 pacman -Sy
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
