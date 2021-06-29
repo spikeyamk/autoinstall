@@ -23,7 +23,6 @@ pacstrap /mnt base linux linux-firmware base-devel
 genfstab -U /mnt >> /mnt/etc/genfstab
 arch-chroot /mnt
 pacman -Sy
-pacman -S vim sudo
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
 hwclock --systohc
 
@@ -58,7 +57,7 @@ sed -i '82s/.//' /etc/sudoers
 # Installing GRUB bootloader
 mkdir /mnt/EFI
 mount "$EFIPATH" /mnt/EFI
-pacman -S grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git
+pacman -S grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget
 
 TEST=$(grep -i vendor_id /proc/cpuinfo | sed '1,2d' | awk '{print $NF }')
 printf "%s\n" "$TEST"
