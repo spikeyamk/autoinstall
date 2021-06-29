@@ -39,16 +39,16 @@ mkdir /mnt/EFI
 echo -n "Specify [EFI partition] PATH: "
 read EFIPATH
 mount "$EFIPATH" /mnt/EFI
-pacman -S grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget
+pacman -S --noconfirm grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget
 
 TEST=$(grep -i vendor_id /proc/cpuinfo | sed -n '$p' | awk '{print $NF }')
 printf "%s\n" "$TEST"
 
 if [ "$TEST" = "GenuineIntel" ]
 	then
-		pacman -S intel-ucode
+		pacman -S --noconfirm intel-ucode
 	else 
-		pacman -S amd-ucode
+		pacman -S --noconfirm amd-ucode
 fi
 
 function jumpto
