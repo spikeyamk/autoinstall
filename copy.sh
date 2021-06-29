@@ -44,7 +44,7 @@ pacman -S grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wg
 TEST=$(grep -i vendor_id /proc/cpuinfo | sed '1,2d' | awk '{print $NF }')
 printf "%s\n" "$TEST"
 
-if [ "$TEST" = "GenuineIntel" ];
+if [ "$TEST" = "GenuineIntel" ]
 		pacman -S intel-ucode
 	else 
 		pacman -S amd-ucode
