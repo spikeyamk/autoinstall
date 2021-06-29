@@ -56,6 +56,8 @@ sed -i '82s/.//' /etc/sudoers
 
 # Installing GRUB bootloader
 mkdir /mnt/EFI
+echo -n "Specify [EFI partition] PATH: "
+read EFIPATH
 mount "$EFIPATH" /mnt/EFI
 pacman -S grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget
 
