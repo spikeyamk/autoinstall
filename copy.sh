@@ -42,7 +42,7 @@ read EFIPATH
 mount "$EFIPATH" /mnt/EFI
 pacman -S grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget
 
-TEST=$(grep -i vendor_id /proc/cpuinfo | sed '1,2d' | awk '{print $NF }')
+TEST=$(grep -i vendor_id /proc/cpuinfo | sed -n '$p' | awk '{print $NF }')
 printf "%s\n" "$TEST"
 
 if [ "$TEST" = "GenuineIntel" ]
