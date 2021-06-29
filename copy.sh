@@ -39,7 +39,7 @@ mkdir /mnt/EFI
 echo -n "Specify [EFI partition] PATH: "
 read EFIPATH
 mount "$EFIPATH" /mnt/EFI
-pacman -S --noconfirm grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget
+pacman -S --noconfirm grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget reflector
 
 TEST=$(grep -i vendor_id /proc/cpuinfo | sed -n '$p' | awk '{print $NF }')
 printf "%s\n" "$TEST"
