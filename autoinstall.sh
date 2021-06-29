@@ -1,5 +1,6 @@
 #!/bin/bash
 
+timedatectl set-ntp true
 # Getiing the partition paths and formatting the partitions
 echo -n "Specify [EFI partition] PATH: "
 read EFIPATH
