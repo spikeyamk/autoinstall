@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Configuring the system running everything in chroot
+# Configuring the system running everything in chroot
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
@@ -34,12 +34,19 @@ sed -i '82s/.//' /etc/sudoers
 
 
 
-# Installing GRUB bootloader
+# Enabling 32-bit pacman repositories
+sed -i ' s/.//' /etc/pacman.conf
+pacman -Sy
+
+
+
+# Installing GRUB bootloader and also some bloat + dGPU drivers 
 mkdir /mnt/EFI
 echo -n "Specify [EFI partition] PATH: "
 read EFIPATH
 mount "$EFIPATH" /mnt/EFI
-pacman -S --noconfirm grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget reflector
+pacman -S --noconfirm grub efibootmgr os-prober dosfstools ntfs-3g networkmanager git vim wget reflector nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 TEST=$(grep -i vendor_id /proc/cpuinfo | sed -n '$p' | awk '{print $NF }')
 printf "%s\n" "$TEST"
@@ -87,6 +94,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # Enabling system services and daemons with systemd
 systemctl enable NetworkManager
 systemctl enable fstrim.timer
+systemctl enable fstrim.service
 systemctl enable reflector.timer
 
 
