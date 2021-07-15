@@ -9,15 +9,15 @@ hwclock --systohc
 # Configuring and generating the locales
 sed -i '177s/.//' /etc/locale.gen
 locale-gen
-echo "LANG=en_US.UTF-8" > /etc/locale.conf
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 
 
 # Setting up networking and hostname
 printf "Choose your hostname: "
 read hostnm
-echo "$hostnm" > /etc/hostname
-printf "127.0.0.1    localhost\n::1    localhost\n127.0.1.1    %s.localdomain    %s" "$hostnm, $hostnm" > /etc/hosts
+echo "$hostnm" >> /etc/hostname
+printf "127.0.0.1    localhost\n::1    localhost\n127.0.1.1    %s.localdomain    %s" "$hostnm, $hostnm" >> /etc/hosts
 
 
 
