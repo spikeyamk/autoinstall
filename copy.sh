@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Configuring the system running everything in chroot
-genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
 hwclock --systohc
