@@ -22,6 +22,13 @@ printf "127.0.0.1    localhost\n::1    localhost\n127.0.1.1    %s.localdomain   
 
 
 
+# Enabling 32-bit pacman repositories
+sed -i ' s/.//' /etc/pacman.conf
+pacman -Sy
+pacman -S sudoň
+
+
+
 # Setting passwords and creating users
 passwd
 printf "Choose a username: "
@@ -31,11 +38,6 @@ passwd "$username"
 usermod -aG wheel,video,optical,storage "$username"
 sed -i '82s/.//' /etc/sudoers
 
-
-
-# Enabling 32-bit pacman repositories
-sed -i ' s/.//' /etc/pacman.conf
-pacman -Sy
 
 
 
@@ -79,6 +81,7 @@ then
 		read WINPATH										      
 		mkdir /home/"$username"/win
 		mount "$WINPATH" /home/"$username"/win
+		echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
 	fi
 else										  
 	printf "Error! Unvalid character\n"
