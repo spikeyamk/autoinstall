@@ -96,13 +96,35 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 
+# Installing xorg and configuring it + installing some GUI bloat
+pacman -S xorg xorg-xinit nitrogen pulseaudio systemd-swap rofi pcmanfm pavucontrol p7zip picom
+sudo nvidia-xconfig
+cp /etc/X11/xinit/xinitrc ~/.xinitrc
+
+
+
+# Installing the suckless utilities
+git clone https://www.github.com/spikeyamk/st
+cd st
+sudo make clean install
+
+git clone https://www.github.com/spikeyamk/dwm
+cd dwm
+sudo make clean install
+
+git clone https://www.github.com/spikeyamk/dwmblocks
+cd dwmblocks
+sudo make clean install
+
+
+
 # Enabling system services and daemons with systemd
 systemctl enable NetworkManager
 systemctl enable fstrim.timer
 systemctl enable fstrim.service
 # systemctl enable reflector.timer
-
-
+systemctl enable systemd-swap
+echo "vm.swappiness=10" > /etc/sysctl.d/99-swappiness.conf
 
 printf "\e[1;32mDone! Type umount -a and reboot.\e[0m"
 
