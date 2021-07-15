@@ -39,7 +39,7 @@ read username
 useradd -m "$username"
 passwd "$username"
 usermod -aG wheel,video,optical,storage "$username"
-pacman -S sudo
+pacman -S --noconfirm sudo
 sed -i '82s/.//' /etc/sudoers
 
 
@@ -97,8 +97,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 # Installing xorg and configuring it + installing some GUI bloat
-pacman -S xorg xorg-xinit nitrogen pulseaudio systemd-swap rofi pcmanfm pavucontrol p7zip picom
-sudo nvidia-xconfig
+pacman -S --noconfirm xorg xorg-xinit nitrogen pulseaudio systemd-swap rofi pcmanfm pavucontrol p7zip picom
+nvidia-xconfig
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
 
