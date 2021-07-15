@@ -97,7 +97,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 # Installing xorg and configuring it + installing some GUI bloat
-pacman -S --noconfirm xorg xorg-xinit nitrogen pulseaudio systemd-swap rofi pcmanfm pavucontrol p7zip picom
+pacman -S --noconfirm xorg xorg-xinit nitrogen pulseaudio systemd-swap rofi pcmanfm pavucontrol p7zip picom htop
 nvidia-xconfig
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
