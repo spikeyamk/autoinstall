@@ -9,7 +9,7 @@ makepkg -si
 
 
 # Installing additional bloat
-paru -S xorg xorg-xinit nitrogen pulseaudio systemd-swap rofi pcmanfm brave-bin spotify pavucontrol p7zip picom nerd-fonts-ubuntu-mono
+paru -S brave-bin spotify nerd-fonts-ubuntu-mono
 sudo nvidia-xconfig
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
