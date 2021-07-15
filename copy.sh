@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Configuring the system running everything in chroot
-arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
 hwclock --systohc
 
@@ -25,19 +24,22 @@ printf "127.0.0.1    localhost\n::1    localhost\n127.0.1.1    %s.localdomain   
 # Enabling 32-bit pacman repositories
 sed -i ' s/.//' /etc/pacman.conf
 pacman -Sy
-pacman -S sudo
 
 
 
-# Setting passwords and creating users
+# Setting root password
 passwd
+
+
+
+# Creating a user and giving it sudo privilleges
 printf "Choose a username: "
 read username
 useradd -m "$username"
 passwd "$username"
 usermod -aG wheel,video,optical,storage "$username"
+pacman -S sudo
 sed -i '82s/.//' /etc/sudoers
-
 
 
 
