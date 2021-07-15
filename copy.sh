@@ -25,7 +25,7 @@ printf "127.0.0.1    localhost\n::1    localhost\n127.0.1.1    %s.localdomain   
 # Enabling 32-bit pacman repositories
 sed -i ' s/.//' /etc/pacman.conf
 pacman -Sy
-pacman -S sudoň
+pacman -S sudo
 
 
 
