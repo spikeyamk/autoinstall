@@ -16,5 +16,5 @@ mkfs.ext4 "$ROOTPATH"
 
 # Base install starts
 mount "$ROOTPATH" /mnt
-pacstrap /mnt base linux linux-firmware base-devel
+pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
