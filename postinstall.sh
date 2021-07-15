@@ -27,8 +27,3 @@ sudo make clean install
 git clone https://www.github.com/spikeyamk/dwmblocks
 cd dwmblocks
 sudo make clean install
-
-
-
-sudo systemctl enable systemd-swap
-sudo echo "vm.swappiness=10" > /etc/sysctl.d/99-swappiness.conf
