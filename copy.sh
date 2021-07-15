@@ -95,7 +95,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
 systemctl enable fstrim.timer
 systemctl enable fstrim.service
-systemctl enable reflector.timer
+# systemctl enable reflector.timer
 
 
 
