@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Enabling the AUR
-pacman -S base-devel
+sudo pacman -S base-devel
 git clone https://aur.archlinux.org/paru
 cd paru 
 makepkg -si
@@ -31,4 +31,4 @@ sudo make clean install
 
 
 sudo systemctl enable systemd-swap
-echo "vm.swappiness=10" > /etc/sysctl.d/99-swappiness.conf
+sudo echo "vm.swappiness=10" > /etc/sysctl.d/99-swappiness.conf
