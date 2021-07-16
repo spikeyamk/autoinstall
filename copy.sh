@@ -124,7 +124,8 @@ systemctl enable fstrim.timer
 systemctl enable fstrim.service
 # systemctl enable reflector.timer
 systemctl enable systemd-swap
-echo "vm.swappiness=10" > /etc/sysctl.d/99-swappiness.conf
+echo "vm.swappiness=10" >> /etc/sysctl.d/99-swappiness.conf
+echo "swapfc_enabled=1" >> /etc/systemd/swap.conf
 
 printf "\e[1;32mDone! Type umount -a and reboot.\e[0m"
 
