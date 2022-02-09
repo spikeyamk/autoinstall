@@ -82,7 +82,7 @@ fi
 
 
 # Formatting the partitions
-printf "Following partitions will be formatted: %s, %s, %s\n" "$EFIPATH, $ROOTPATH, $SWAPPATH"
+printf "Following partitions will be formatted: %s, %s, %s\n" "$EFIPATH $ROOTPATH $SWAPPATH"
 printf "All data on them will be permanently erased. Do you wish to proceed? [y/n]: "
 
 read ANSWER
