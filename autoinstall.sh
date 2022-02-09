@@ -36,7 +36,7 @@ then
 	UEFI_ENABLED=$(bootctl | awk 'NR==2' | sed 's/    //')
 	if [ "$UEFI_ENABLED" ==  "Not booted with EFI" ]
 	then
-		printf "Error! Legacy BIOS boot mode is disabled. Reboot into the UEFI firmware settings and enable it and reebot the live Archiso in the UEFI mode\n"
+		printf "Error! Legacy BIOS boot mode is disabled. Reboot into the UEFI firmware settings, enable it and boot into the live Archiso environment in the UEFI mode\n"
 		printf "Exiting the script!"
 		exit
 	fi
@@ -46,7 +46,7 @@ then
 	UEFI_ENABLED=$(bootctl | awk 'NR==2' | sed 's/    //')
 	if [ "$UEFI_ENABLED" ==  "Not booted with EFI" ]
 	then
-		printf "Error! Legacy BIOS boot mode is disabled. Reboot into the UEFI firmware settings and enable it and reebot the live Archiso in the UEFI mode\n"
+		printf "Error! Legacy BIOS boot mode is disabled. Reboot into the UEFI firmware settings, enable it and boot into the live Archiso environment in the UEFI mode\n"
 		printf "Exiting the script!"
 		exit
 	fi
