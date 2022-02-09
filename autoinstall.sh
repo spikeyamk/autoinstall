@@ -53,6 +53,11 @@ then
 			exit
 		else
 			printf "Have you partitioned the disk yourself already? [y/n]: "
+			read ANSWER
+			if [ "$ANSWER" == "n" ]
+				printf "You can use the fidsk command line utility to partition the disks and then rerun the script.\n
+				exit
+			fi
 	fi
 else										  
 	printf "Error! Invalid answer\n"
