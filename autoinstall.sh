@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Defining jumpto function
+# Jumpto function definition
 function jumpto
 {
 	label=$1
