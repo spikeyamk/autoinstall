@@ -77,8 +77,9 @@ then
 				printf "Error! Specified EFI parition is not the correct partition type"
 				exit
 			fi
+		
 			
-			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l | grep "$EFIPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/ EFI System//' ")
+			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l | grep "$EFIPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/ EFI System//')
 			if [[ $TEST -lt 300 ]]
 			then
 				printf "The EFI partition is too small. Increase its size. $TEST\n"
