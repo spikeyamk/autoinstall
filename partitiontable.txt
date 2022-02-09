@@ -1,11 +1,16 @@
-                                            UEFI with GPT
-Mount point   Partition                 Partition type        Suggested size
-/mnt/boot1	  /dev/efi_system_partition	EFI system partition	At least 300 MiB
-[SWAP]	      /dev/swap_partition	      Linux swap            More than 512 MiB
-/mnt	        /dev/root_partition	      Linux x86-64 root (/)	Remainder of the device
+
+                                      UEFI with GPT
+______________________________________________________________________________________
+Mount point   Partition                 Partition type 	       Suggested size
+/mnt/boot     /dev/efi__partition 	EFI system	       At least 300 MiB
+[SWAP]	      /dev/swap_partition	Linux swap             More than 512 MiB
+/mnt	      /dev/root_partition	Linux filesystem       Remainder of the device
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
 
-                              BIOS with MBR
-Mount point   Partition	Partition       type	                Suggested size
-[SWAP]	      /dev/swap_partition	      Linux swap	          More than 512 MiB
-/mnt	        /dev/root_partition	      Linux	                Remainder of the device
+
+                                      BIOS with MBR
+_____________________________________________________________________________________ 
+Mount point   Partition			Partition type	       Suggested size
+[SWAP]	      /dev/swap_partition	Linux swap	       More than 512 MiB
+/mnt	      /dev/root_partition	Linux	               Remainder of the device‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
