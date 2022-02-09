@@ -86,6 +86,7 @@ then
 				echo w;
 		 	) | fdisk $DISKTOAUTOPART
 		elif [ "$ANSWER" == "n" ]
+		then
 			printf "Exiting the script!\n"
 			exit
 		else					  
