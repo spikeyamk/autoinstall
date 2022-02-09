@@ -32,7 +32,6 @@ read BOOTMODE
 
 if [ "$BOOTMODE" == "1" ] || [ "$BOOTMODE" == "2" ] || [ "$BOOTMODE" == "3" ]
 then
-	printf "%s\n" "$BOOTMODE"
 	if [ "$BOOTMODE" == "2" ]
 	then
 		printf "UEFI with SecureBoot has not been implemented yet.\n"
@@ -341,18 +340,18 @@ swapon "$SWAPPATH"
 
 
 # Printing the variables
-printf "Variables you chose:\n"
-printf "+++++++++++++++++++++++++++++\n"
-printf "BOOTMODE=$BOOTMODE\n"
-printf "AUTOPART=$AUTOPART\n"
-printf "DISKTOAUTOPART=$DISKTOAUTOPART\n"
-printf "USESWAP=$USESWAP\n"
-printf "SWAPSIZE=$SWAPSIZE\n"
-printf "DISKTOPART=$DISKTOPART\n"
-printf "EFIPATH=$EFIPATH\n"
-printf "SWAPPATH=$SWAPPATH\n"
-printf "ROOTPATH=$ROOTPATH\n"
-printf "+++++++++++++++++++++++++++++\n"
+printf "Variables you chose:\n" >> config
+printf "+++++++++++++++++++++++++++++\n" >> config
+printf "BOOTMODE=$BOOTMODE\n" >> config
+printf "AUTOPART=$AUTOPART\n" >> config
+printf "DISKTOAUTOPART=$DISKTOAUTOPART\n" >> config
+printf "USESWAP=$USESWAP\n" >> config
+printf "SWAPSIZE=$SWAPSIZE\n" >> config
+printf "DISKTOPART=$DISKTOPART\n" >> config
+printf "EFIPATH=$EFIPATH\n" >> config
+printf "SWAPPATH=$SWAPPATH\n" >> config
+printf "ROOTPATH=$ROOTPATH\n" >> config
+printf "+++++++++++++++++++++++++++++\n" >> config
 
 printf "Everything OK? [y/n]: "
 read ANSWER
@@ -361,6 +360,28 @@ then
 	# Installing the base
 	pacstrap /mnt base linux linux-firmware
 	genfstab -U /mnt >> /mnt/etc/fstab
+	printf "Success!\n"
+	printf "Do you wish to chroot into your newly installed Arch Linux base and continue the installation? [y/n]: "
+	read ANSWER
+	if [ "$ANSWER" == "y" ]
+	then
+		# Chrooting
+		cp -a /root/autoinstall /mnt
+		printf "Chrooting into /mnt"
+		sleep 1
+		printf "."
+		sleep 1
+		printf "."
+		sleep 1
+		printf ".\n"
+		arch-chroot /mnt
+	elif [ "$ANSWER" == "n" ]
+	then
+		printf "Exiting the script!\n"
+		exit
+	else
+		printf "Invalid answer\n"
+		exit	
 elif [ "$ANSWER" == "n" ]
 then
 	printf "Exiting the script!\n"
@@ -369,7 +390,3 @@ else
 	printf "Error! Invalid answer\n"
 	jumpto $start
 fi
-
-
-# Chrooting
-arch-chroot /mnt
