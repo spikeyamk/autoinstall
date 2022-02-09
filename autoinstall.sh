@@ -68,7 +68,10 @@ then
 			then
 				exit
 			fi
-				
+			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l)
+			printf "$TEST"
+			sleep 5	
+
 			printf "Specify [Linux swap] PATH (leave blank if you do not wish to use a swap partition): "
 			read SWAPPATH
 			TEST=$(find "$SWAPPATH")
