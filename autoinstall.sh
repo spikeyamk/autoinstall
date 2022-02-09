@@ -39,8 +39,7 @@ then
 		printf "Error! Legacy BIOS boot mode is disabled. Reboot into the UEFI firmware settings, enable it and boot into the live Archiso environment in the UEFI mode\n"
 		printf "Exiting the script!\n"
 		exit
-	elif
-	then
+	else
 		UEFI_ENABLED=y
 	fi
 elif [ "$BOOTMODE" == "2" ]
@@ -52,8 +51,7 @@ then
 		printf "Error! Legacy BIOS boot mode is disabled. Reboot into the UEFI firmware settings, enable it and boot into the live Archiso environment in the UEFI mode\n"
 		printf "Exiting the script!\n"
 		exit
-	elif
-	then
+	else
 		UEFI_ENABLED=y
 	fi
 	exit
