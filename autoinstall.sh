@@ -54,7 +54,6 @@ read AUTOPART
 
 if [ "$AUTOPART" == "y" ] || [ "$AUTOPART" == "n" ]
 then
-	printf "%s\n" "$AUTOPART"
 	if [ "$AUTOPART" == "y" ]
 	then 
 		printf "Available disk for installation\n"
@@ -62,13 +61,11 @@ then
         printf "Which disk would you like to auto parition? [choose a number 1, 2, 3 etc.]: "
 		read DISKTOAUTOPART
 		DISKTOAUTOPART=$(lsscsi | grep disk | sed -n $((DISKTOAUTOPART))p | awk '{print $(NF)}')
-		printf "%s\n" "$DISKTOAUTOPART"
 
 		# DISKTOAUTOPART test
 		TEST=$(find $DISKTOAUTOPART)
 		if [ "$DISKTOAUTOPART" == "$TEST" ]
-            then
-
+        then
             printf "Do you wish to create a swap partition? [y/n]: "
             read USESWAP
             if [ "$USESWAP" == "y" ]
@@ -83,8 +80,8 @@ then
                     (
                         echo g;
                         echo n;
-		        echo 1;
-		        echo ;
+		                echo 1;
+		                echo ;
                         echo +300M;
                         echo n;
                         echo 2;
@@ -92,8 +89,8 @@ then
                         echo +"$SWAPSIZE"G;
                         echo n;
                         echo 3;
-			echo ;
-			echo ;
+			            echo ;
+			            echo ;
                         echo t;
                         echo 1;
                         echo 1;
@@ -123,13 +120,13 @@ then
                     (
                         echo g;
                         echo n;
-		        echo 1;
-		        echo ;
+		                echo 1;
+		                echo ;
                         echo +300M;
                         echo n;
                         echo 2;
-			echo ;
-			echo ;
+			            echo ;
+			            echo ;
                         echo t;
                         echo 1;
                         echo 1;
@@ -149,18 +146,10 @@ then
                 printf "Error! Invalid answer\n"
                 jumpto $start
             fi
-
         else
             printf "Error! Invalid answer\n"
             jumpto $start
         fi
-printf "%s\n" "$BOOTMODE"
-
-
-
-
-
-
 
 
 
@@ -222,7 +211,7 @@ printf "%s\n" "$BOOTMODE"
 			read USESWAP
 			if [ "$USESWAP" == "y" ]
 			then
-		        	printf "Specify the linux swap partition [Linux swap] PATH: "
+                printf "Specify the linux swap partition [Linux swap] PATH: "
 				read SWAPPATH
 
 				TEST=$(find "$SWAPPATH")
@@ -381,7 +370,8 @@ then
 		exit
 	else
 		printf "Invalid answer\n"
-		exit	
+		exit
+    fi
 elif [ "$ANSWER" == "n" ]
 then
 	printf "Exiting the script!\n"
