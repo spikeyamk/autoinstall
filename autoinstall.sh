@@ -66,7 +66,7 @@ then
 			TEST=$(find "$EFIPATH")
 			if [ "$TEST" != "$EFIPATH" ]
 			then
-				printf "Error! Specified EFI partition does not exist"
+				printf "Error! Specified EFI partition does not exist\n"
 				jumpto $start
 				exit
 			fi
@@ -74,16 +74,15 @@ then
 			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l | grep "$EFIPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
 			if [ "$TEST" != "EFI System" ]
 			then
-				printf "Error! Specified EFI parition is not the correct partition type"
-				exit
+				printf "Error! Specified EFI parition is not the correct partition type\n"
+				jumpto $start
 			fi
 		
 			
 			TEST=$(lsblk -b "$EFIPATH" | awk '{print $4}' | awk 'NR==2')
 			if [[ $((TEST)) -lt 314572800 ]]
 			then
-				printf "The EFI partition is too small. Increase its size. $TEST\n"
-				sleep 5
+				printf "The EFI partition is too small. Its size has to be at least 300 MiB.\n"
 				exit
 			fi	
 
