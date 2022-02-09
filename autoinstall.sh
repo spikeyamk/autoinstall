@@ -88,7 +88,7 @@ printf "All data on them will be permanently erased. Do you wish to proceed? [y/
 read ANSWER
 if [ "$ANSWER" == "y" ] || [ "$ANSWER" == "n" ]
 then
-	if [ "$ANSWER" == "y"]
+	if [ "$ANSWER" == "y" ]
 	then
 		mkfs.fat -F 32 "$EFIPATH"
 		mkfs.ext4 "$ROOTPATH"
