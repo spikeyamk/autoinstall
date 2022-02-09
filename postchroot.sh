@@ -128,6 +128,6 @@ fi
 # echo "vm.swappiness=10" >> /etc/sysctl.d/99-swappiness.conf
 # echo "swapfc_enabled=1" >> /etc/systemd/swap.conf
 
-printf "\e[1;32mDone! You can install additional software with pacman (see man pacman (8)). Or you can type exit, type umount -a and reboot. The system is ready for a reboot.\e[0m"
+printf "\e[1;32mDone! You can install additional software with pacman (see man pacman (8)). Or you can type exit, type umount -a and reboot. The system is ready for a reboot.\n\e[0m"
 
 exit
