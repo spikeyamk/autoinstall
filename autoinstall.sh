@@ -63,7 +63,9 @@ then
 					printf "%s\n" "$EFIPATH"
 					printf "Specify [Linux filesystem(root)] PATH: "
 					read ROOTPATH
-					printf "%s\n" "$ROOTPATH"		
+					printf "%s\n" "$ROOTPATH"	
+					printf "Specify [Linux swap] PATH (leave blank if you do not wish to use a swap partition): "
+					read SWAPPATH	
 				else
 					printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
 					cat partitiontable.txt
@@ -80,10 +82,13 @@ fi
 # Formatting the partitions
 mkfs.fat -F 32 "$EFIPATH"
 mkfs.ext4 "$ROOTPATH"
-
+mkswap "$SWAPPATH"
 
 # Base install starts
 mount "$ROOTPATH" /mnt
+mkdir /mnt/boot
+mount "$EFIPATH" /mnt/boot
+swapon "$SWAPPATH"
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 
