@@ -40,8 +40,8 @@ then
 		printf "Exiting the script!\n"
 		exit
 	else
-		printf "UEFI Firmware detected\n"
-		printf "$UEFI_ENABLED\n"
+		printf "\e[1;32mUEFI Firmware detected!\n\e[0m"
+		printf "\e[1;32m$UEFI_ENABLED\n\e[0m"
 		UEFI_ENABLED=y
 	fi
 elif [ "$BOOTMODE" == "2" ]
@@ -54,8 +54,8 @@ then
 		printf "Exiting the script!\n"
 		exit
 	else
-		printf "UEFI Firmware detected\n"
-		printf "$UEFI_ENABLED\n"
+		printf "\e[1;32mUEFI Firmware detected!\n\e[0m"
+		printf "\e[1;32m$UEFI_ENABLED\n\e[0m"
 		UEFI_ENABLED=y
 	fi
 	exit
