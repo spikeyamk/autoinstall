@@ -38,10 +38,10 @@ else
 fi
 
 pacman -Sy
-pacman -S --noconfirm "base-devel grub efibootmgr os-prober dosfstools mtools \
-    ntfs-3g networkmanager git vim wget reflector xorg xorg-xinit nitrogen \
-    pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack pavucontrol \
-    alsa-utils bluez bluez-utils p7zip htop btop lsscsi neofetch bash-completion \
+pacman -S --noconfirm "base-devel grub efibootmgr os-prober dosfstools mtools
+    ntfs-3g networkmanager git vim wget reflector xorg xorg-xinit nitrogen
+    pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack pavucontrol
+    alsa-utils bluez bluez-utils p7zip htop btop lsscsi neofetch bash-completion
     samba openssh"
 
 
@@ -124,6 +124,7 @@ then
     printf "Fstrim.timer will stay disabled\n"
 else
     printf "Error! Invalid answer\n"
+fi
 
 # systemctl enable reflector.timer
 # systemctl enable systemd-swap

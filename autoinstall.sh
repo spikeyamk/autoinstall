@@ -29,7 +29,6 @@ start:
 # Configuring the installer for legacy BIOS or UEFI boot
 printf "1> For UEFI systems\n2> For UEFI systems with SecureBoot\n3> For legacy BIOS systems\nSelect the boot mode [1/2/3]: "
 read BOOTMODE
-printf "%s\n" "$BOOTMODE"
 
 if [ "$BOOTMODE" == "1" ] || [ "$BOOTMODE" == "2" ] || [ "$BOOTMODE" == "3" ]
 then
@@ -39,7 +38,7 @@ then
 		printf "UEFI with SecureBoot has not been implemented yet.\n"
 		exit
 	fi
-    if [ "$BOOTMODE" == "2" ]
+    if [ "$BOOTMODE" == "3" ]
 	then
 		printf "Legacy BIOS has not been implemented yet.\n"
 		exit
@@ -156,7 +155,7 @@ then
             printf "Error! Invalid answer\n"
             jumpto $start
         fi
-
+printf "%s\n" "$BOOTMODE"
 
 
 
@@ -344,15 +343,15 @@ swapon "$SWAPPATH"
 # Printing the variables
 printf "Variables you chose:\n"
 printf "+++++++++++++++++++++++++++++\n"
-printf "BOOTMODE=$BOOTMODE\n" >> variables.txt
-printf "AUTOPART=$AUTOPART\n" >> variables.txt
-printf "DISKTOAUTOPART=$DISKTOAUTOPART\n" variables.txt
-printf "USESWAP=$USESWAP\n" >> variables.txt
-printf "SWAPSIZE=$SWAPSIZE\n" >> variables.txt
-printf "DISKTOPART=$DISKTOPART\n" >> variables.txt
-printf "EFIPATH=$EFIPATH\n" >> variables.txt
-printf "SWAPPATH=$SWAPPATH\n" >> variables.txt
-printf "ROOTPATH=$ROOTPATH\n" >> variables.txt
+printf "BOOTMODE=$BOOTMODE\n"
+printf "AUTOPART=$AUTOPART\n"
+printf "DISKTOAUTOPART=$DISKTOAUTOPART\n"
+printf "USESWAP=$USESWAP\n"
+printf "SWAPSIZE=$SWAPSIZE\n"
+printf "DISKTOPART=$DISKTOPART\n"
+printf "EFIPATH=$EFIPATH\n"
+printf "SWAPPATH=$SWAPPATH\n"
+printf "ROOTPATH=$ROOTPATH\n"
 printf "+++++++++++++++++++++++++++++\n"
 
 printf "Everything OK? [y/n]: "
@@ -361,24 +360,7 @@ if [ "$ANSWER" == "y" ]
 then
 	# Installing the base
 	pacstrap /mnt base linux linux-firmware
-	printf "Generating /mnt/etc/stab ...\n"
 	genfstab -U /mnt >> /mnt/etc/fstab
-	printf "Success!\n"
-	printf "Do you wish to chroot into your newly installed system and continue the installation? [y/n]: "
-	read ANSWER
-	if [ "$ANSWER" == "y" ]
-	then
-		# Chrooting
-		cp -a /root/autoinstall /mnt/
-		arch-chroot /mnt
-	elif [ "$ANSWER" == "n" ]
-	then
-		printf "Exiting the script!"
-	else
-		printf "Error! Invalid answer\n"
-		jumpto $start
-	fi
-
 elif [ "$ANSWER" == "n" ]
 then
 	printf "Exiting the script!\n"
@@ -387,3 +369,7 @@ else
 	printf "Error! Invalid answer\n"
 	jumpto $start
 fi
+
+
+# Chrooting
+arch-chroot /mnt
