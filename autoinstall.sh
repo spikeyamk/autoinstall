@@ -18,10 +18,12 @@ timedatectl set-ntp true
 sed -i '/ParallelDownloads = 5/s/^#//g' /etc/pacman.conf
 
 
-# Configuring the installer for legacy BIOS or UEFI boot
+# Script jumptos here after an invalid answer to start over again
 start=${1:-"start"}
 start:
 
+
+# Configuring the installer for legacy BIOS or UEFI boot
 printf "1- For UEFI systems\n2- For legacy BIOS systems\nSelect the boot mode [1/2]: "
 read BOOTMODE
 printf "%s\n" "$BOOTMODE"
