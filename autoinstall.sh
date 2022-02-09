@@ -63,11 +63,30 @@ then
 			printf "Specify [EFI System] PATH: "
 			read EFIPATH
 			printf "%s\n" "$EFIPATH"
+			TEST=$(find "$EFIPATH")
+			if [ "$TEST" != "$EFIPATH" ]
+			then
+				exit
+			fi
+				
+			printf "Specify [Linux swap] PATH (leave blank if you do not wish to use a swap partition): "
+			read SWAPPATH
+			TEST=$(find "$SWAPPATH")
+			if [ "$TEST" != "$SWAPPATH" ]
+			then
+				exit
+			fi
+				
+			
 			printf "Specify [Linux filesystem(root)] PATH: "
 			read ROOTPATH
-			printf "%s\n" "$ROOTPATH"	
-			printf "Specify [Linux swap] PATH (leave blank if you do not wish to use a swap partition): "
-			read SWAPPATH	
+			printf "%s\n" "$ROOTPATH"
+			TEST=$(find "$ROOTPATH")
+			if [ "$TEST" != "$ROOTPATH" ]
+			then
+				exit
+			fi
+				
 		else
 			printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
 			cat partitiontable.txt
