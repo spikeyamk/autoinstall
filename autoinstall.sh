@@ -343,7 +343,7 @@ swapon "$SWAPPATH"
 
 # Printing the variables
 printf "Variables you chose:\n"
-+++++++++++++++++++++++++++++
+printf "+++++++++++++++++++++++++++++\n"
 printf "BOOTMODE=$BOOTMODE\n"
 printf "AUTOPART=$AUTOPART\n"
 printf "DISKTOAUTOPART=$DISKTOAUTOPART\n"
@@ -353,7 +353,7 @@ printf "DISKTOPART=$DISKTOPART\n"
 printf "EFIPATH=$EFIPATH\n"
 printf "SWAPPATH=$SWAPPATH\n"
 printf "ROOTPATH=$ROOTPATH\n"
-+++++++++++++++++++++++++++++
+printf "+++++++++++++++++++++++++++++\n"
 
 printf "Everything OK? [y/n]: "
 read ANSWER
