@@ -30,6 +30,11 @@ printf "%s\n" "$BOOTMODE"
 if [ "$BOOTMODE" == "1" ] || [ "$BOOTMODE" == "2" ]
 then
 	printf "%s\n" "$BOOTMODE"
+	if [ "$BOOTMODE" == "2" ]
+		then
+			printf "Legacy BIOS has not been implemented yet.\n"
+			exit
+	fi
 else										  
 	printf "Error! Invalid answer\n"
 	jumpto $start
