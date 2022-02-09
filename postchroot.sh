@@ -77,7 +77,7 @@ function jumpto
 
 start=${1:-"start"}
 start:
-printf "Do you wish to integrate a win parition inside GRUB.conf [y/n]? ;"
+printf "Do you wish to integrate a win parition inside GRUB.conf [y/n]? :"
 read answer
 
 if [ "$answer" == "y" ] || [ "$answer" == "n" ]
