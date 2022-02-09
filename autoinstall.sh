@@ -66,11 +66,23 @@ then
 			TEST=$(find "$EFIPATH")
 			if [ "$TEST" != "$EFIPATH" ]
 			then
+				printf "Error! Specified EFI partition does not exist"
+				jumpto $start
 				exit
 			fi
+			
 			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l | grep "$EFIPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
-			printf "$TEST\n"
-			sleep 5	
+			if [ "TEST" != "EFI System" ]
+			then
+				printf "Error! Specified EFI parition is not the correct partition type"
+				exit
+			fi
+			
+			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l | grep "$EFIPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/ EFI System//'")
+			if [ $TEST -lt 300 ]
+			printf "The EFI partition is too small. Increase its size. $TEST\n"
+			sleep 5
+			fi	
 
 			printf "Specify [Linux swap] PATH (leave blank if you do not wish to use a swap partition): "
 			read SWAPPATH
