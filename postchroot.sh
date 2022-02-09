@@ -29,11 +29,12 @@ if [ "$ANSWER" == "y" ]
 then
     sed -i '93s/.//' /etc/pacman.conf
     sed -i '94s/.//' /etc/pacman.conf
+    printf "\e[1;32mMultilib repositories have been enabled\n\e[0m"
 elif [ "$ANSWER" == "n" ]
 then
     printf "Multilib repositories will stay disabled\n"
 else
-    printf "Error! Invalid answer\n"
+    printf "\e[1;31mError! Invalid answer\n\e[0m"
     exit
 fi
 
@@ -92,7 +93,7 @@ then
 		echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
 	fi
 else										  
-	printf "Error! Invalid answer\n"
+    printf "\e[1;31mError! Invalid answer\n\e[0m"
 	jumpto $start
 fi
 
@@ -114,12 +115,12 @@ read ANSWER
 if [ "$ANSWER" == "y" ]
 then
     systemctl enable fstrim.timer
-    printf "Fstrim.timer has been enabled\n"
+    printf "\e[1;32mFstrim.timer has been enabled\n\e[0m"
 elif [ "$ANSWER" == "n" ]
 then
     printf "Fstrim.timer will stay disabled\n"
 else
-    printf "Error! Invalid answer\n"
+    printf "\e[1;31mError! Invalid answer\n\e[0m"
 fi
 
 # systemctl enable reflector.timer
@@ -127,6 +128,6 @@ fi
 # echo "vm.swappiness=10" >> /etc/sysctl.d/99-swappiness.conf
 # echo "swapfc_enabled=1" >> /etc/systemd/swap.conf
 
-printf "\e[1;32mDone! Type umount -a and reboot.\e[0m"
+printf "\e[1;32mDone! You can install additional software with pacman (see man pacman (8)). Or you can type exit, type umount -a and reboot. The system is ready for a reboot.\e[0m"
 
 exit
