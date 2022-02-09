@@ -151,8 +151,11 @@ then
 				cat partitiontable.txt
 				exit
 			fi
-			fi	
-		fi
+		fi	
+	else										  
+		printf "Error! Invalid answer\n"
+		jumpto $start
+	fi
 else										  
 	printf "Error! Invalid answer\n"
 	jumpto $start
