@@ -57,6 +57,7 @@ then
 			if [ "$ANSWER" == "y" ]
 				then
 					# Getiing the partition paths
+					fdisk -l
 					printf "Specify [EFI partition] PATH: "
 					read EFIPATH
 					printf "%s\n" "$EFIPATH"
