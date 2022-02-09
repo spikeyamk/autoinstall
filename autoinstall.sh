@@ -59,7 +59,21 @@ then
 		read DISKTOAUTOPART
 		DISKTOAUTOPART=$(lsscsi | grep disk | sed -n $((DISKTOAUTOPART))p | awk '{print $(NF)}')
 		printf "%s\n" "$DISKTOAUTOPART"
-
+		(
+			echo o;
+			echo n;
+		        echo ;
+		        echo ;
+			echo ;
+			echo +25M;
+			echo a;
+			echo n;
+			echo ;
+			echo ;
+			echo ;
+			echo ;
+			echo w;
+		 ) | fdisk $DISKTOAUTOPART
 
 
 
