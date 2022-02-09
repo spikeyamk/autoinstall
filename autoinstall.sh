@@ -50,6 +50,7 @@ then
 	if [ "$ANSWER" == "y" ]
 		then 
 			printf "Suggested auto partitiong has not been implemented yet.\n"
+			exit
 		else
 			printf "Have you partitioned the disk yourself already? [y/n]: "
 	fi
