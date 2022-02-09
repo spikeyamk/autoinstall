@@ -19,9 +19,19 @@ sed -i '/ParallelDownloads = 5/s/^#//g' /etc/pacman.conf
 
 
 # Configuring the installer for legacy BIOS or UEFI boot
+bootmodesel=${1:-"start"}
+bootmodesel:
+
 printf "1- For UEFI systems\n2- For legacy BIOS systems\n Select the boot mode [1/2]: "
 read BOOTMODE
 printf "%s\n" "$BOOTMODE"
+if [ "$BOOTMODE" == "1" ] || [ "$BOOTMODE" == "2" ]
+then
+	printf "%s\n" "$BOOTMODE"
+else										  
+	printf "Error! Invalid answer\n"
+	jumpto $bootmodesel
+fi
 
 
 # Suggested auto partitioning
