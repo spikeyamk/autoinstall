@@ -14,6 +14,20 @@ read BOOTMODE
 printf "%s\n" "$BOOTMODE"
 
 
+# Suggested auto partitioning
+printf "Do you wish to use suggested auto partitiong of the drives? [y/n]: "
+read ANSWER
+
+if [ "$ANSWER" = "y" ]
+	then
+		printf"success\n"
+    sleep 2
+	else 
+		printf"nosuccess\n"
+fi
+
+
+
 # Getiing the partition paths
 printf "Specify [EFI partition] PATH: "
 read EFIPATH
