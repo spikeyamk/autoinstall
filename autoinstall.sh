@@ -30,18 +30,30 @@ start:
 printf "1> For UEFI systems\n2> For UEFI systems with SecureBoot\n3> For legacy BIOS systems\nSelect the boot mode [1/2/3]: "
 read BOOTMODE
 
-if [ "$BOOTMODE" == "1" ] || [ "$BOOTMODE" == "2" ] || [ "$BOOTMODE" == "3" ]
+if [ "$BOOTMODE" == "1" ]
 then
-	if [ "$BOOTMODE" == "2" ]
+	UEFI_ENABLED=$(ls /sys/firmware/efi/efivars)
+	if [ "$UEFI_ENABLED" == "ls: cannot access '/sys/firmware/efi/efivars': No such file or directory" ]
 	then
-		printf "UEFI with SecureBoot has not been implemented yet.\n"
+		printf "Error! Legacy BIOS boot mode is disabled. Reboot into the UEFI firmware settings and enable it and reebot the live Archiso in the UEFI mode\n"
+		printf "Exiting the script!"
 		exit
 	fi
-    if [ "$BOOTMODE" == "3" ]
+elif [ "$BOOTMODE" == "2" ]
+then
+	printf "UEFI with SecureBoot has not been implemented yet.\n"
+	UEFI_ENABLED=$(ls /sys/firmware/efi/efivars)
+	if [ "$UEFI_ENABLED" == "ls: cannot access '/sys/firmware/efi/efivars': No such file or directory" ]
 	then
-		printf "Legacy BIOS has not been implemented yet.\n"
+		printf "Error! Legacy BIOS boot mode is disabled. Reboot into the UEFI firmware settings and enable it and reebot the live Archiso in the UEFI mode\n"
+		printf "Exiting the script!"
 		exit
 	fi
+	exit
+elif [ "$BOOTMODE" == "3" ]
+then
+	printf "Legacy BIOS has not been implemented yet.\n"
+	exit
 else										  
 	printf "Error! Invalid answer\n"
 	jumpto $start
