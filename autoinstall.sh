@@ -8,6 +8,12 @@ timedatectl set-ntp true
 sed -i '/ParallelDownloads = 5/s/^#//g' /etc/pacman.conf
 
 
+# Configuring the installer for legacy BIOS or UEFI boot
+printf "Select the boot mode\n 1- For UEFI systems\ 2- For legacy BIOS systems"
+read BOOTMODE
+printf "%s\n" "$BOOTMODE"
+
+
 # Getiing the partition paths
 printf "Specify [EFI partition] PATH: "
 read EFIPATH
