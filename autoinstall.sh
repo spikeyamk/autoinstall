@@ -27,14 +27,19 @@ start:
 
 
 # Configuring the installer for legacy BIOS or UEFI boot
-printf "1> For UEFI systems\n2> For legacy BIOS systems\nSelect the boot mode [1/2]: "
+printf "1> For UEFI systems\n2> For UEFI systems with SecureBoot\n3> For legacy BIOS systems\nSelect the boot mode [1/2/3]: "
 read BOOTMODE
 printf "%s\n" "$BOOTMODE"
 
-if [ "$BOOTMODE" == "1" ] || [ "$BOOTMODE" == "2" ]
+if [ "$BOOTMODE" == "1" ] || [ "$BOOTMODE" == "2" ] || [ "$BOOTMODE" == "3" ]
 then
 	printf "%s\n" "$BOOTMODE"
 	if [ "$BOOTMODE" == "2" ]
+	then
+		printf "UEFI with SecureBoot has not been implemented yet.\n"
+		exit
+	fi
+    if [ "$BOOTMODE" == "2" ]
 	then
 		printf "Legacy BIOS has not been implemented yet.\n"
 		exit
@@ -80,8 +85,8 @@ then
                     (
                         echo g;
                         echo n;
-		        		echo 1;
-		        		echo ;
+		        echo 1;
+		        echo ;
                         echo +300M;
                         echo n;
                         echo 2;
@@ -89,8 +94,8 @@ then
                         echo +"$SWAPSIZE"G;
                         echo n;
                         echo 3;
-			        	echo ;
-			        	echo ;
+			echo ;
+			echo ;
                         echo t;
                         echo 1;
                         echo 1;
@@ -120,13 +125,13 @@ then
                     (
                         echo g;
                         echo n;
-		        		echo 1;
-		        		echo ;
+		        echo 1;
+		        echo ;
                         echo +300M;
                         echo n;
                         echo 2;
-			        	echo ;
-			        	echo ;
+			echo ;
+			echo ;
                         echo t;
                         echo 1;
                         echo 1;
@@ -308,7 +313,7 @@ fi
 
 
 # Formatting the partitions
-printf "Following partitions will be formatted: $EFIPATH, $SWAPPATH, $ROOTPATH"
+printf "Following partitions will be formatted: $EFIPATH, $SWAPPATH, $ROOTPATH\n"
 printf "All data on them will be permanently erased. Do you wish to proceed? [y/n]: "
 
 read ANSWER
@@ -336,9 +341,35 @@ mount "$EFIPATH" /mnt/boot
 swapon "$SWAPPATH"
 
 
-# Installing base
-pacstrap /mnt base linux linux-firmware
-genfstab -U /mnt >> /mnt/etc/fstab
+# Printing the variables
+printf "Variables you chose:\n"
++++++++++++++++++++++++++++++
+printf "BOOTMODE=$BOOTMODE"
+printf "AUTOPART=$AUTOPART"
+printf "DISKTOAUTOPART=$DISKTOAUTOPART"
+printf "USESWAP=$USESWAP"
+printf "SWAPSIZE=$SWAPSIZE"
+printf "DISKTOPART=$DISKTOPART"
+printf "EFIPATH=$EFIPATH"
+printf "SWAPPATH=$SWAPPATH"
+printf "ROOTPATH=$ROOTPATH"
++++++++++++++++++++++++++++++
+
+printf "Everything OK? [y/n]: "
+read ANSWER
+if [ "$ANSWER" == "y" ]
+then
+	# Installing the base
+	pacstrap /mnt base linux linux-firmware
+	genfstab -U /mnt >> /mnt/etc/fstab
+elif [ "$ANSWER" == "n" ]
+then
+	printf "Exiting the script!\n"
+	exit
+else
+	printf "Error! Invalid answer\n"
+	jumpto $start
+fi
 
 
 # Chrooting
