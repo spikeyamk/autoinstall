@@ -22,7 +22,6 @@ mkfs.fat -F 32 "$EFIPATH"
 mkfs.ext4 "$ROOTPATH"
 
 
-
 # Base install starts
 mount "$ROOTPATH" /mnt
 pacstrap /mnt base linux linux-firmware
