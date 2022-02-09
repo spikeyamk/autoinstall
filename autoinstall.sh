@@ -145,11 +145,12 @@ then
 				###	
 
 				
-				else
-					printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
-					cat partitiontable.txt
-					exit
-				fi
+			else
+				printf "I selected N\n"	
+				printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
+				cat partitiontable.txt
+				exit
+			fi
 			fi	
 		fi
 else										  
