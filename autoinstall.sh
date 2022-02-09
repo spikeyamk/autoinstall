@@ -59,41 +59,77 @@ then
 		read DISKTOAUTOPART
 		DISKTOAUTOPART=$(lsscsi | grep disk | sed -n $((DISKTOAUTOPART))p | awk '{print $(NF)}')
 		printf "%s\n" "$DISKTOAUTOPART"
-		printf "WARNING! All data on the %s will be erased\n" "$DISKTOPART"
-		printf "Do you wish to proceed? [y/n]: "
-		read ANSWER
-		if [ "$ANSWER" == "y" ]
+		printf "Do you wish to create a swap partition? [y/n]: "
+		read USESWAP
+		if [ "$USESWAP" == "y" ]
 		then
-			(	
-				echo g;
-				echo n;
-		        	echo 1;
-		        	echo ;
-				echo +300M;
-				echo n;
-				echo 2;
-				echo ;
-				echo +1G;
-				echo n;
-				echo 3;
-		        	echo ;
-		        	echo ;
-				echo t;
-				echo 1;
-				echo 1;
-				echo t;
-				echo 2;
-				echo 19;
-				echo w;
-		 	) | fdisk $DISKTOAUTOPART
-		elif [ "$ANSWER" == "n" ]
+			printf "Choose the size of the swap partition in GiB (example 4 chooses 4 GiB): "
+			read SWAPSIZE
+			printf "WARNING! All data on the %s will be erased\n" "$DISKTOPART"
+			printf "Do you wish to proceed? [y/n]: "
+			read ANSWER
+			if [ "$ANSWER" == "y" ]
+			then
+				(	
+					echo g;
+					echo n;
+		        		echo 1;
+		        		echo ;
+					echo +300M;
+					echo n;
+					echo 2;
+					echo ;
+					echo +"$SWAPSIZE"G;
+					echo n;
+					echo 3;
+			        	echo ;
+			        	echo ;
+					echo t;
+					echo 1;
+					echo 1;
+					echo t;
+					echo 2;
+					echo 19;
+					echo w;
+			 	) | fdisk $DISKTOAUTOPART
+			elif [ "$ANSWER" == "n" ]
+			then
+				printf "Exiting the script!\n"
+				exit
+			else					  
+				printf "Error! Invalid answer\n"
+				jumpto $start
+			fi
+		elif [ "$USESWAP" == "n" ]
 		then
-			printf "Exiting the script!\n"
-			exit
-		else					  
-			printf "Error! Invalid answer\n"
-			jumpto $start
-		fi
+			printf "WARNING! All data on the %s will be erased\n" "$DISKTOPART"
+			printf "Do you wish to proceed? [y/n]: "
+			read ANSWER
+			if [ "$ANSWER" == "y" ]
+			then
+				(	
+					echo g;
+					echo n;
+		        		echo 1;
+		        		echo ;
+					echo +300M;
+					echo n;
+					echo 2;
+			        	echo ;
+			        	echo ;
+					echo t;
+					echo 1;
+					echo 1;
+					echo w;
+			 	) | fdisk $DISKTOAUTOPART
+			elif [ "$ANSWER" == "n" ]
+			then
+				printf "Exiting the script!\n"
+				exit
+			else					  
+				printf "Error! Invalid answer\n"
+				jumpto $start
+			fi
 
 
 
