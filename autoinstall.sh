@@ -9,10 +9,10 @@ sed -i '/ParallelDownloads = 5/s/^#//g' /etc/pacman.conf
 
 
 # Getiing the partition paths
-echo -n "Specify [EFI partition] PATH: \n"
+printf "Specify [EFI partition] PATH: \n"
 read EFIPATH
-printf "%s\n" "$EFIPATH\n"
-echo -n "Specify [ROOT partition] PATH: \n"
+printf "%s\n" "$EFIPATH"
+printf "Specify [ROOT partition] PATH: \n"
 read ROOTPATH
 printf "%s\n" "$ROOTPATH"
 
