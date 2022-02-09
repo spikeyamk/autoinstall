@@ -82,6 +82,7 @@ then
 				echo 1;
 				echo 1;
 				echo t;
+				echo 2;
 				echo 19;
 				echo w;
 		 	) | fdisk $DISKTOAUTOPART
