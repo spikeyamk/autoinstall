@@ -35,9 +35,6 @@ fi
 
 
 # Suggested auto partitioning
-start=${1:-"start"}
-start:
-
 printf "Do you wish to use suggested auto partitiong of the drives? [y/n]: "
 read ANSWER
 if [ "$ANSWER" == "y" ] || [ "$ANSWER" == "n" ]
