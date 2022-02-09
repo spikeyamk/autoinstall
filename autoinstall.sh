@@ -1,8 +1,10 @@
 #!/bin/bash
+
 GITPATH=$(pwd)
+UEFI_ENABLED=n
+
 source "$GITPATH"/uefi.sh
 
-UEFI_ENABLED=n
 # Jumpto function definition
 function jumpto
 {
@@ -78,6 +80,7 @@ fi
 # Saving variables to config
 printf "Variables you chose:\n" >> config
 printf "+++++++++++++++++++++++++++++\n" >> config
+printf "GITPATH=$GITPATH\n" >> config
 printf "UEFI_ENABLED=$UEFI_ENABLED\n" >> config
 printf "BOOTMODE=$BOOTMODE\n" >> config
 printf "AUTOPART=$AUTOPART\n" >> config
@@ -94,6 +97,7 @@ printf "+++++++++++++++++++++++++++++\n" >> config
 # Printing the variables
 printf "Variables you chose:\n"
 printf "+++++++++++++++++++++++++++++\n"
+printf "GITPATH=$GITPATH\n"
 printf "UEFI_ENABLED=$UEFI_ENABLED\n"
 printf "BOOTMODE=$BOOTMODE\n"
 printf "AUTOPART=$AUTOPART\n"
