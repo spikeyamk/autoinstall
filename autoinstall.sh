@@ -79,8 +79,8 @@ then
 			fi
 		
 			
-			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l | grep "$EFIPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/ EFI System//')
-			if [[ $TEST -lt 300 ]]
+			TEST=$(find "$EFIPATH" | sed 's/\/dev\///' | lsblk -b | awk '{ print $4 }')
+			if [[ $TEST -lt 314572800 ]]
 			then
 				printf "The EFI partition is too small. Increase its size. $TEST\n"
 				sleep 5
