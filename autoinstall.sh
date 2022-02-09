@@ -59,21 +59,40 @@ then
 		read DISKTOAUTOPART
 		DISKTOAUTOPART=$(lsscsi | grep disk | sed -n $((DISKTOAUTOPART))p | awk '{print $(NF)}')
 		printf "%s\n" "$DISKTOAUTOPART"
-		(
-			echo o;
-			echo n;
-		        echo ;
-		        echo ;
-			echo ;
-			echo +25M;
-			echo a;
-			echo n;
-			echo ;
-			echo ;
-			echo ;
-			echo ;
-			echo w;
-		 ) | fdisk $DISKTOAUTOPART
+		printf "WARNING! All data on the %s will be erased\n" "$DISKTOPART"
+		printf "Do you wish to proceed? [y/n]: "
+		read ANSWER
+		if [ "$ANSWER" == "y" ]
+		then
+			(	
+				echo g;
+				echo n;
+		        	echo 1;
+		        	echo ;
+				echo +300M;
+				echo n;
+				echo 2;
+				echo ;
+				echo +1G;
+				echo n;
+				echo 3;
+		        	echo ;
+		        	echo ;
+				echo t;
+				echo 1;
+				echo 1;
+				echo t;
+				echo 19;
+				echo w;
+		 	) | fdisk $DISKTOAUTOPART
+		elif [ "$ANSWER" == "n" ]
+			printf "Exiting the script!\n"
+			exit
+		else					  
+			printf "Error! Invalid answer\n"
+			jumpto $start
+		fi
+
 
 
 
