@@ -35,7 +35,7 @@ then
 	printf "%s\n" "$ANSWER"
 	if [ "$ANSWER" == "y" ]
 		then 
-			printf "nosuccess"
+			printf "success"
 		else
 			printf "nosuccess"
 	fi
