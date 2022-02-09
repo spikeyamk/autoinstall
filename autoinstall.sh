@@ -57,7 +57,7 @@ then
 		printf "Which disk would you like to auto parition?\n"
 		lsscsi | grep disk
 		read DISKTOAUTOPART
-		TEST=$(lsscsi | grep disk | sed -n $((TEST))p | awk { print $(NF) )
+		TEST=$(lsscsi | grep disk | sed -n $((TEST))p | awk { print $(NF) })
 		printf "%s\n" "$DISKTOAUTOPART"
 
 
