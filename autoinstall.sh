@@ -99,7 +99,7 @@ then
 			# Swap partition tests
 			printf "Do you wish to use a linux swap partition? [y/n]: "
 			read USESWAP
-			if [ "$USESWAP" == "y"]
+			if [ "$USESWAP" == "y" ]
 			then
 		        	printf "Specify the linux swap partition [Linux swap] PATH: "
 				read SWAPPATH
