@@ -1,7 +1,7 @@
                                       UEFI with GPT
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-Mount point   Partition        		Type/Filesystem 	       	       Suggested size	
-/mnt/boot     /dev/efi__partition	EFI system/FAT32	       At least 300 MiB
+Mount point   Partition        		Type/Filesystem 	    Suggested size	
+/mnt/boot     /dev/efi__partition	EFI system/FAT32	    At least 300 MiB
 [SWAP]	      /dev/swap_partition	Linux swap/SWAP             More than 512 MiB
 /mnt	      /dev/root_partition	Linux filesystem/EXT4       Remainder of the device
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
@@ -11,5 +11,5 @@ Mount point   Partition        		Type/Filesystem 	       	       Suggested size
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 Mount point   Partition			Type/Filesystem	       Suggested size
 [SWAP]	      /dev/swap_partition	Linux swap/SWAP	       More than 512 MiB
-/mnt	      /dev/root_partition	Linux/EXT4	               Remainder of the device
+/mnt	      /dev/root_partition	Linux/EXT4	       Remainder of the device
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
