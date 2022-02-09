@@ -25,8 +25,8 @@ printf "%s\n" "$BOOTMODE"
 
 
 # Suggested auto partitioning
-start=${1:-"start"}
-start:
+autopart=${1:-"start"}
+autopart:
 
 printf "Do you wish to use suggested auto partitiong of the drives? [y/n]: "
 read ANSWER
@@ -41,7 +41,7 @@ then
 	fi
 else										  
 	printf "Error! Invalid answer\n"
-	jumpto $start
+	jumpto $autopart
 fi
 
 
