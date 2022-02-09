@@ -130,7 +130,10 @@ then
 				printf "Error! Invalid answer\n"
 				jumpto $start
 			fi
-
+        else
+			printf "Error! Invalid answer\n"
+			jumpto $start
+        fi
 
 
 
