@@ -13,4 +13,5 @@ Mount point   Partition                 Partition type 	       Suggested size
 _____________________________________________________________________________________ 
 Mount point   Partition			Partition type	       Suggested size
 [SWAP]	      /dev/swap_partition	Linux swap	       More than 512 MiB
-/mnt	      /dev/root_partition	Linux	               Remainder of the device‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+/mnt	      /dev/root_partition	Linux	               Remainder of the device
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
