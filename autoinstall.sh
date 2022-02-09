@@ -22,7 +22,7 @@ sed -i '/ParallelDownloads = 5/s/^#//g' /etc/pacman.conf
 bootmodesel=${1:-"start"}
 bootmodesel:
 
-printf "1- For UEFI systems\n2- For legacy BIOS systems\n Select the boot mode [1/2]: "
+printf "1- For UEFI systems\n2- For legacy BIOS systems\nSelect the boot mode [1/2]: "
 read BOOTMODE
 printf "%s\n" "$BOOTMODE"
 if [ "$BOOTMODE" == "1" ] || [ "$BOOTMODE" == "2" ]
