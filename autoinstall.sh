@@ -58,10 +58,10 @@ then
 				then
 					# Getiing the partition paths
 					fdisk -l
-					printf "Specify [EFI partition] PATH: "
+					printf "Specify [EFI System] PATH: "
 					read EFIPATH
 					printf "%s\n" "$EFIPATH"
-					printf "Specify [ROOT partition] PATH: "
+					printf "Specify [Linux filesystem(root)] PATH: "
 					read ROOTPATH
 					printf "%s\n" "$ROOTPATH"		
 				else
