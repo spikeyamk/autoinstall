@@ -27,7 +27,7 @@ start:
 
 
 # Configuring the installer for legacy BIOS or UEFI boot
-printf "1- For UEFI systems\n2- For legacy BIOS systems\nSelect the boot mode [1/2]: "
+printf "1> For UEFI systems\n2> For legacy BIOS systems\nSelect the boot mode [1/2]: "
 read BOOTMODE
 printf "%s\n" "$BOOTMODE"
 
@@ -54,8 +54,9 @@ then
 	printf "%s\n" "$AUTOPART"
 	if [ "$AUTOPART" == "y" ]
 	then 
-		printf "Which disk would you like to auto parition?\n"
+		printf "Available disk for installation\n"
 		lsscsi | grep disk | nl -w2 -s'> '
+        printf "Which disk would you like to auto parition? [choose a number 1, 2, 3 etc.]\n"
 		read DISKTOAUTOPART
 		DISKTOAUTOPART=$(lsscsi | grep disk | sed -n $((DISKTOAUTOPART))p | awk '{print $(NF)}')
 		printf "%s\n" "$DISKTOAUTOPART"
@@ -167,8 +168,6 @@ then
 
 
 
-		printf "Suggested auto partitiong has not been implemented yet.\n"
-		exit
 	elif [ "$AUTOPART" == "n" ]
 	then
         # Manual partitioning
