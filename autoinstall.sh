@@ -1,5 +1,6 @@
 #!/bin/bash
 
+UEFI_ENABLED=n
 # Jumpto function definition
 function jumpto
 {
@@ -32,8 +33,8 @@ read BOOTMODE
 
 if [ "$BOOTMODE" == "1" ]
 then
-	UEFI_ENABLED=$(ls /sys/firmware/efi/efivars)
-	if [ "$UEFI_ENABLED" == "ls: cannot access '/sys/firmware/efi/efivars': No such file or directory" ]
+	UEFI_ENABLED=$(bootctl | awk 'NR==2' | sed 's/    //')
+	if [ "$UEFI_ENABLED" ==  "Not booted with EFI" ]
 	then
 		printf "Error! Legacy BIOS boot mode is disabled. Reboot into the UEFI firmware settings and enable it and reebot the live Archiso in the UEFI mode\n"
 		printf "Exiting the script!"
@@ -42,8 +43,8 @@ then
 elif [ "$BOOTMODE" == "2" ]
 then
 	printf "UEFI with SecureBoot has not been implemented yet.\n"
-	UEFI_ENABLED=$(ls /sys/firmware/efi/efivars)
-	if [ "$UEFI_ENABLED" == "ls: cannot access '/sys/firmware/efi/efivars': No such file or directory" ]
+	UEFI_ENABLED=$(bootctl | awk 'NR==2' | sed 's/    //')
+	if [ "$UEFI_ENABLED" ==  "Not booted with EFI" ]
 	then
 		printf "Error! Legacy BIOS boot mode is disabled. Reboot into the UEFI firmware settings and enable it and reebot the live Archiso in the UEFI mode\n"
 		printf "Exiting the script!"
