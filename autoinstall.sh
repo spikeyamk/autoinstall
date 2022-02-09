@@ -54,9 +54,18 @@ then
 		else
 			printf "Have you partitioned the disk yourself already? [y/n]: "
 			read ANSWER
-			if [ "$ANSWER" == "n" ]
+			if [ "$ANSWER" == "y" ]
 				then
-					printf "You can use the fidsk command line utility to partition the disks and then rerun the script.\n"
+					# Getiing the partition paths
+					printf "Specify [EFI partition] PATH: "
+					read EFIPATH
+					printf "%s\n" "$EFIPATH"
+					printf "Specify [ROOT partition] PATH: "
+					read ROOTPATH
+					printf "%s\n" "$ROOTPATH"		
+				else
+					printf "You can use the fidsk command line utility (see man fidsk) to partition the disks and then rerun the script.\n"
+					cat partitiontable.txt
 					exit
 			fi
 	fi
@@ -65,15 +74,6 @@ else
 	jumpto $start
 fi
 
-
-
-# Getiing the partition paths
-printf "Specify [EFI partition] PATH: "
-read EFIPATH
-printf "%s\n" "$EFIPATH"
-printf "Specify [ROOT partition] PATH: "
-read ROOTPATH
-printf "%s\n" "$ROOTPATH"
 
 
 # Formatting the partitions
