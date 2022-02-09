@@ -361,7 +361,24 @@ if [ "$ANSWER" == "y" ]
 then
 	# Installing the base
 	pacstrap /mnt base linux linux-firmware
+	printf "Generating /mnt/etc/stab ...\n"
 	genfstab -U /mnt >> /mnt/etc/fstab
+	printf "Success!\n"
+	printf "Do you wish to chroot into your newly installed system and continue the installation? [y/n]: "
+	read ANSWER
+	if [ "$ANSWER" == "y" ]
+	then
+		# Chrooting
+		cp -a /root/autoinstall /mnt/
+		arch-chroot /mnt
+	elif [ "$ANSWER" == "n" ]
+	then
+		printf "Exiting the script!"
+	else
+		printf "Error! Invalid answer\n"
+		jumpto $start
+	fi
+
 elif [ "$ANSWER" == "n" ]
 then
 	printf "Exiting the script!\n"
@@ -370,7 +387,3 @@ else
 	printf "Error! Invalid answer\n"
 	jumpto $start
 fi
-
-
-# Chrooting
-arch-chroot /mnt
