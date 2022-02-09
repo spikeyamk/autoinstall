@@ -80,8 +80,7 @@ then
 		
 			
 			TEST=$(find "$EFIPATH" | sed 's/\/dev\///' | lsblk -b | awk '{ print $4 }')
-			TEST=$(printf "%d" "$EFIPATH")
-			if [[ $TEST -lt 314572800 ]]
+			if [[ $((TEST)) -lt 314572800 ]]
 			then
 				printf "The EFI partition is too small. Increase its size. $TEST\n"
 				sleep 5
