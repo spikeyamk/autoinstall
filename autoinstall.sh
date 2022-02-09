@@ -54,7 +54,8 @@ then
 		printf "Suggested auto partitiong has not been implemented yet.\n"
 		exit
 	elif [ "$AUTOPART" == "n" ]
-		# Manual partitioning
+	then
+        # Manual partitioning
 		printf "Have you partitioned the disk yourself already? [y/n]: "
 		read ANSWER
 		if [ "$ANSWER" == "y" ]
