@@ -54,6 +54,10 @@ then
 		printf "Suggested auto partitiong has not been implemented yet.\n"
 		exit
 	else
+		
+		
+		
+		# Manual partitioning
 		printf "Have you partitioned the disk yourself already? [y/n]: "
 		read ANSWER
 		if [ "$ANSWER" == "y" ]
@@ -63,46 +67,79 @@ then
 			printf "Specify [EFI System] PATH: "
 			read EFIPATH
 			printf "%s\n" "$EFIPATH"
+			
+
+			# EFI Partition tests
+			###
 			TEST=$(find "$EFIPATH")
 			if [ "$TEST" != "$EFIPATH" ]
 			then
 				printf "Error! Specified EFI partition does not exist\n"
 				jumpto $start
-				exit
 			fi
-			
+			# EFI partition type test	
 			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l | grep "$EFIPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
 			if [ "$TEST" != "EFI System" ]
 			then
 				printf "Error! Specified EFI parition is not the correct partition type\n"
 				jumpto $start
-			fi
-		
-			
+			fi	
+			#EFI partition size test			
 			TEST=$(lsblk -b "$EFIPATH" | awk '{print $4}' | awk 'NR==2')
 			if [[ $((TEST)) -lt 314572800 ]]
 			then
 				printf "The EFI partition is too small. Its size has to be at least 300 MiB.\n"
 				exit
 			fi	
+			###
+			# End of EFI partition tests
+			
 
+			###
+			# Swap partition tests
 			printf "Specify [Linux swap] PATH (leave blank if you do not wish to use a swap partition): "
 			read SWAPPATH
+
 			TEST=$(find "$SWAPPATH")
 			if [ "$TEST" != "$SWAPPATH" ]
 			then
-				exit
+				printf "Error! Specified swap partition does not exist\n"
+				jumpto $start
 			fi
-				
 			
+			# Linux swap partition type test	
+			TEST=$(find "$SWAPPATH" | sed 's/[0-9]//' | fdisk -l | grep "$SWAPPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
+			if [ "$TEST" != "Linux swap" ]
+			then
+				printf "Error! Specified Linux swap parition is not the correct partition type\n"
+				jumpto $start
+			fi
+			# End of swap partition tests
+			###
+
+
+			###
+			# Linux root filesystem tests
 			printf "Specify [Linux filesystem(root)] PATH: "
 			read ROOTPATH
+			
 			printf "%s\n" "$ROOTPATH"
 			TEST=$(find "$ROOTPATH")
 			if [ "$TEST" != "$ROOTPATH" ]
 			then
-				exit
+				printf "Error! Specified Linux root parition does not exist\n"
+				jumpto $start
 			fi
+			# Linux root filesystem partition type test	
+			TEST=$(find "$ROOTPATH" | sed 's/[0-9]//' | fdisk -l | grep "$ROOTPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
+			if [ "$TEST" != "Linux filesystem" ]
+			then
+				printf "Error! Specified Linux root parition is not the correct partition type\n"
+				jumpto $start
+			fi
+			# End of Linux root filesystem tests
+			###	
+
 				
 		else
 			printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
