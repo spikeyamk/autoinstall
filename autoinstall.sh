@@ -35,7 +35,7 @@ fi
 
 
 # Suggested auto partitioning
-autopart=${1:-"start"}
+autopart=${1:-"autopart"}
 autopart:
 
 printf "Do you wish to use suggested auto partitiong of the drives? [y/n]: "
