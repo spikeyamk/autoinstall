@@ -56,8 +56,7 @@ then
 			read ANSWER
 			if [ "$ANSWER" == "n" ]
 				then
-					printf "You can use the fidsk command line utility to partition\n
-					the disks and then rerun the script.\n"
+					printf "You can use the fidsk command line utility to partition the disks and then rerun the script.\n"
 					exit
 			fi
 	fi
