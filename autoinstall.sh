@@ -36,7 +36,7 @@ then
 	UEFI_ENABLED=$(bootctl | awk 'NR==2' | sed 's/    //')
 	if [ "$UEFI_ENABLED" ==  "Not booted with EFI" ]
 	then
-		printf '\e[31m%s\e[0m' "Error! Legacy BIOS boot mode is enabled. Reboot into the UEFI firmware settings, enable it and boot into the live Archiso environment in the UEFI mode"
+		printf "\e[1;31mError! Legacy BIOS boot mode is enabled. Reboot into the UEFI firmware settings, enable it and boot into the live Archiso environment in the UEFI mode\n\e[0m"
 		printf "Exiting the script!\n"
 		exit
 	else
@@ -50,7 +50,7 @@ then
 	UEFI_ENABLED=$(bootctl | awk 'NR==2' | sed 's/    //')
 	if [ "$UEFI_ENABLED" ==  "Not booted with EFI" ]
 	then
-		printf '\e[31m%s\e[0m' "Error! Legacy BIOS boot mode is enabled. Reboot into the UEFI firmware settings, enable it and boot into the live Archiso environment in the UEFI mode"
+		printf "\e[1;31mError! Legacy BIOS boot mode is enabled. Reboot into the UEFI firmware settings, enable it and boot into the live Archiso environment in the UEFI mode\n\e[0m"
 		printf "Exiting the script!\n"
 		exit
 	else
@@ -93,7 +93,7 @@ then
             then
                 printf "Choose the size of the swap partition in GiB (example 4 chooses 4 GiB): "
                 read SWAPSIZE
-                printf '\e[31m%s\e[0m' "WARNING! All data on the %s will be erased\n" "$DISKTOPART"
+                printf "\e[1;31mWARNING! All data on the %s will be erased\n\e[0m"
                 printf "Do you wish to proceed? [y/n]: "
                 read ANSWER
                 if [ "$ANSWER" == "y" ]
@@ -128,12 +128,12 @@ then
                     printf "Exiting the script!\n"
                     exit
                 else
-                    printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
+                    printf "\e[1;31mError! Invalid answer\n\e[0m"
                     jumpto $start
                 fi
             elif [ "$USESWAP" == "n" ]
             then
-                printf '\e[31m%s\e[0m' "WARNING! All data on the %s will be erased" "$DISKTOPART"
+                printf "\e[1;31mWARNING! All data on the %s will be erased\n\e[0m" "$DISKTOPART"
                 printf "Do you wish to proceed? [y/n]: "
                 read ANSWER
                 if [ "$ANSWER" == "y" ]
@@ -160,16 +160,16 @@ then
                     printf "Exiting the script!\n"
                     exit
                 else
-                    printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
+                    printf "\e[1;31mError! Invalid answer\n\e[0m"
                     jumpto $start
                 fi
             else
-                printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
+                printf "\e[1;31mError! Invalid answer\n\e[0m"
                 jumpto $start
             fi
         else
 
-        	printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
+            printf "\e[1;31mError! Invalid answer\n\e[0m"
         	jumpto $start
         fi
 
@@ -195,21 +195,21 @@ then
 			TEST=$(find "$EFIPATH")
 			if [ "$TEST" != "$EFIPATH" ]
 			then
-				printf '\e[31m%s\e[0m' "Error! Specified EFI partition does not exist\n"
+				printf "\e[1;31mError! Specified EFI partition does not exist\n\e[0m"
 				jumpto $start
 			fi
 			# EFI partition type test	
 			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l | grep "$EFIPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
 			if [ "$TEST" != "EFI System" ]
 			then
-				printf '\e[31m%s\e[0m' "Error! Specified EFI parition is not the correct partition type\n"
+				printf "\e[1;31mError! Specified EFI parition is not the correct partition type\n\e[0m"
 				jumpto $start
 			fi	
 			#EFI partition size test			
 			TEST=$(lsblk -b "$EFIPATH" | awk '{print $4}' | awk 'NR==2')
 			if [[ $((TEST)) -lt 314572800 ]]
 			then
-				printf '\e[31m%s\e[0m' "Error! The EFI partition is too small. Its size has to be at least 300 MiB.\n"
+				printf "\e[1;31mError! The EFI partition is too small. Its size has to be at least 300 MiB.\n\e[0m"
 				exit
 			fi	
 			###
@@ -228,7 +228,7 @@ then
 				TEST=$(find "$SWAPPATH")
 				if [ "$TEST" != "$SWAPPATH" ]
 				then
-					printf '\e[31m%s\e[0m' "Error! Specified swap partition does not exist\n"
+					printf "\e[1;31mError! Specified swap partition does not exist\n\e[0m"
 					jumpto $start
 				fi
 			
@@ -236,7 +236,7 @@ then
 				TEST=$(find "$SWAPPATH" | sed 's/[0-9]//' | fdisk -l | grep "$SWAPPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
 				if [ "$TEST" != "Linux swap" ]
 				then
-					printf '\e[31m%s\e[0m' "Error! Specified Linux swap parition is not the correct partition type\n"
+					printf "\e[1;31mError! Specified Linux swap parition is not the correct partition type\n\e[0m"
 					jumpto $start
 				fi
 				# End of swap partition tests
@@ -252,14 +252,14 @@ then
 				TEST=$(find "$ROOTPATH")
 				if [ "$TEST" != "$ROOTPATH" ]
 				then
-					printf '\e[31m%s\e[0m' "Error! Specified Linux root parition does not exist\n"
+					printf "\e[1;31mError! Specified Linux root parition does not exist\n\e[0m"
 					jumpto $start
 				fi
 				# Linux root filesystem partition type test	
 				TEST=$(find "$ROOTPATH" | sed 's/[0-9]//' | fdisk -l | grep "$ROOTPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
 				if [ "$TEST" != "Linux filesystem" ]
 				then
-					printf '\e[31m%s\e[0m' "Error! Specified Linux root parition is not the correct partition type\n"
+					printf "\e[1;31mError! Specified Linux root parition is not the correct partition type\n\e[0m"
 					jumpto $start
 				fi
 				# End of Linux root filesystem tests
@@ -276,21 +276,21 @@ then
 				TEST=$(find "$ROOTPATH")
 				if [ "$TEST" != "$ROOTPATH" ]
 				then
-					printf '\e[31m%s\e[0m' "Error! Specified Linux root parition does not exist\n"
+                    printf "\e[1;31mError! Specified Linux root parition does not exist\n\e[0m"
 					jumpto $start
 				fi
 				# Linux root filesystem partition type test
 				TEST=$(find "$ROOTPATH" | sed 's/[0-9]//' | fdisk -l | grep "$ROOTPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
 				if [ "$TEST" != "Linux filesystem" ]
 				then
-					printf '\e[31m%s\e[0m' "Error! Specified Linux root parition is not the correct partition type\n"
+					printf "\e[1;31mError! Specified Linux root parition is not the correct partition type\n\e[0m"
 					jumpto $start
 				fi
 				# End of Linux root filesystem tests
 				###
 			else
 
-		printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
+                printf "\e[1;31mError! Invalid answer\n\e[0m"
                 jumpto $start
 
 			fi
@@ -301,20 +301,20 @@ then
             exit
         else
 
-		printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
+            printf "\e[1;31mError! Invalid answer\n\e[0m"
         	jumpto $start
         fi
 	fi
 else										  
-	printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
+    printf "\e[1;31mError! Invalid answer\n\e[0m"
 	jumpto $start
 fi
 
 
 
 # Formatting the partitions
-printf "Following partitions will be formatted: $EFIPATH, $SWAPPATH, $ROOTPATH\n"
-printf "All data on them will be permanently erased. Do you wish to proceed? [y/n]: "
+printf "\e[1;31mWARNING! Following partitions will be formatted: $EFIPATH, $SWAPPATH, $ROOTPATH\n\e[0m"
+printf "\e[1;31mAll data on them will be permanently erased. Do you wish to proceed? [y/n]: \e[0m"
 
 read ANSWER
 if [ "$ANSWER" == "y" ] || [ "$ANSWER" == "n" ]
@@ -330,7 +330,7 @@ then
 		exit
 	fi
 else
-	printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
+	printf "\e[1;31mError! Invalid answer\n\e[0m"
 	jumpto $start
 fi
 
@@ -400,7 +400,7 @@ then
 		printf "Exiting the script!\n"
 		exit
 	else
-		printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
+        printf "\e[1;31mError! Invalid answer\n\e[0m"
 		exit
     fi
 elif [ "$ANSWER" == "n" ]
@@ -408,6 +408,6 @@ then
 	printf "Exiting the script!\n"
 	exit
 else
-	printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
+	printf "\e[1;31mError! Invalid answer\n\e[0m"
 	jumpto $start
 fi
