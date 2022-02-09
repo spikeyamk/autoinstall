@@ -27,13 +27,14 @@ start:
 printf "1- For UEFI systems\n2- For legacy BIOS systems\nSelect the boot mode [1/2]: "
 read BOOTMODE
 printf "%s\n" "$BOOTMODE"
+
 if [ "$BOOTMODE" == "1" ] || [ "$BOOTMODE" == "2" ]
 then
 	printf "%s\n" "$BOOTMODE"
 	if [ "$BOOTMODE" == "2" ]
-		then
-			printf "Legacy BIOS has not been implemented yet.\n"
-			exit
+	then
+		printf "Legacy BIOS has not been implemented yet.\n"
+		exit
 	fi
 else										  
 	printf "Error! Invalid answer\n"
@@ -43,34 +44,35 @@ fi
 
 # Suggested auto partitioning
 printf "Do you wish to use suggested auto partitiong of the drives? [y/n]: "
-read ANSWER
-if [ "$ANSWER" == "y" ] || [ "$ANSWER" == "n" ]
+read AUTOPART
+
+if [ "$AUTOPART" == "y" ] || [ "$AUTOPART" == "n" ]
 then
-	printf "%s\n" "$ANSWER"
-	if [ "$ANSWER" == "y" ]
-		then 
-			printf "Suggested auto partitiong has not been implemented yet.\n"
-			exit
+	printf "%s\n" "$AUTOPART"
+	if [ "$AUTOPART" == "y" ]
+	then 
+		printf "Suggested auto partitiong has not been implemented yet.\n"
+		exit
+	else
+		printf "Have you partitioned the disk yourself already? [y/n]: "
+		read ANSWER
+		if [ "$ANSWER" == "y" ]
+		then
+			# Getiing the partition paths
+			fdisk -l
+			printf "Specify [EFI System] PATH: "
+			read EFIPATH
+			printf "%s\n" "$EFIPATH"
+			printf "Specify [Linux filesystem(root)] PATH: "
+			read ROOTPATH
+			printf "%s\n" "$ROOTPATH"	
+			printf "Specify [Linux swap] PATH (leave blank if you do not wish to use a swap partition): "
+			read SWAPPATH	
 		else
-			printf "Have you partitioned the disk yourself already? [y/n]: "
-			read ANSWER
-			if [ "$ANSWER" == "y" ]
-				then
-					# Getiing the partition paths
-					fdisk -l
-					printf "Specify [EFI System] PATH: "
-					read EFIPATH
-					printf "%s\n" "$EFIPATH"
-					printf "Specify [Linux filesystem(root)] PATH: "
-					read ROOTPATH
-					printf "%s\n" "$ROOTPATH"	
-					printf "Specify [Linux swap] PATH (leave blank if you do not wish to use a swap partition): "
-					read SWAPPATH	
-				else
-					printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
-					cat partitiontable.txt
-					exit
-			fi
+			printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
+			cat partitiontable.txt
+			exit
+		fi
 	fi
 else										  
 	printf "Error! Invalid answer\n"
@@ -80,15 +82,34 @@ fi
 
 
 # Formatting the partitions
-mkfs.fat -F 32 "$EFIPATH"
-mkfs.ext4 "$ROOTPATH"
-mkswap "$SWAPPATH"
+printf "Following partitions will be formatted: %s, %s, %s\n" "$EFIPATH, $ROOTPATH, $SWAPPATH"
+printf "All data on them will be permanently erased. Do you wish to proceed? [y/n]: "
 
-# Base install starts
+read ANSWER
+if [ "$ANSWER" == "y" ] || [ "$ANSWER" == "n" ]
+then
+	if [ "$ANSWER" == "y"]
+	then
+		mkfs.fat -F 32 "$EFIPATH"
+		mkfs.ext4 "$ROOTPATH"
+		mkswap "$SWAPPATH"
+	if [ "$ANSWER" == "n" ]
+	then
+		printf "Exiting the script!\n"
+		exit
+	else
+		printf "Error! Invalid answer\n"
+		jumpto $start
+	fi
+fi
+
+# Mounting the filesystems
 mount "$ROOTPATH" /mnt
 mkdir /mnt/boot
 mount "$EFIPATH" /mnt/boot
 swapon "$SWAPPATH"
+
+
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 
