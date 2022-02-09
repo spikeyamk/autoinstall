@@ -1,11 +1,11 @@
                                             UEFI with GPT
-Mount point               Partition	                Partition type	                  Suggested size
-/mnt/boot1	              /dev/efi_system_partition	EFI system partition	            At least 300 MiB
-[SWAP]	                  /dev/swap_partition	      Linux swap                        More than 512 MiB
-/mnt	                    /dev/root_partition	      Linux x86-64 root (/)	            Remainder of the device
-Other mount points, such as /mnt/efi, are possible, provided that the used boot loader is capable of loading the kernel and initramfs images from the root volume. See the warning in Arch boot process#Boot loader.
+Mount point   Partition                 Partition type        Suggested size
+/mnt/boot1	  /dev/efi_system_partition	EFI system partition	At least 300 MiB
+[SWAP]	      /dev/swap_partition	      Linux swap            More than 512 MiB
+/mnt	        /dev/root_partition	      Linux x86-64 root (/)	Remainder of the device
+
 
                               BIOS with MBR
-Mount point       Partition	Partition   type	        Suggested size
-[SWAP]	          /dev/swap_partition	  Linux swap	  More than 512 MiB
-/mnt	            /dev/root_partition	  Linux	        Remainder of the device
+Mount point   Partition	Partition       type	                Suggested size
+[SWAP]	      /dev/swap_partition	      Linux swap	          More than 512 MiB
+/mnt	        /dev/root_partition	      Linux	                Remainder of the device
