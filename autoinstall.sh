@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Defining jumpto function
+function jumpto
+{
+	label=$1
+	cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v ':$') 
+	eval "$cmd"
+	exit
+}
+
+
 # Activating ntp time synchronization
 timedatectl set-ntp true
 
@@ -15,15 +25,23 @@ printf "%s\n" "$BOOTMODE"
 
 
 # Suggested auto partitioning
+start=${1:-"start"}
+start:
+
 printf "Do you wish to use suggested auto partitiong of the drives? [y/n]: "
 read ANSWER
-
-if [ "$ANSWER" = "y" ]
-	then
-		printf "success\n"
-    sleep 2
-	else 
-		printf "nosuccess\n"
+if [ "$ANSWER" == "y" ] || [ "$ANSWER" == "n" ]
+then
+	printf "%s\n" "$ANSWER"
+	if [ "$ANSWER" == "y" ]
+		then 
+			printf "nosuccess"
+		else
+			printf "nosuccess"
+	fi
+else										  
+	printf "Error! Invalid answer\n"
+	jumpto $start
 fi
 
 
