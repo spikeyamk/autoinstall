@@ -68,7 +68,7 @@ then
 			then
 				exit
 			fi
-			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l)
+			TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l | grep "$EFIPATH")
 			printf "$TEST"
 			sleep 5	
 
