@@ -99,6 +99,9 @@ then
                         echo 19;
                         echo w;
                     ) | fdisk $DISKTOAUTOPART
+                    EFIPATH="$DISKTOAUTOPART""1"
+                    SWAPPATH="$DISKTOAUTOPART""2"
+                    ROOTPATH="$DISKTOAUTOPART""3"
                 elif [ "$ANSWER" == "n" ]
                 then
                     printf "Exiting the script!\n"
@@ -129,6 +132,8 @@ then
                         echo 1;
                         echo w;
                     ) | fdisk $DISKTOAUTOPART
+                    EFIPATH="$DISKTOAUTOPART""1"
+                    ROOTPATH="$DISKTOAUTOPART""2"
                 elif [ "$ANSWER" == "n" ]
                 then
                     printf "Exiting the script!\n"
