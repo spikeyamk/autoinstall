@@ -93,7 +93,7 @@ then
 		mkfs.fat -F 32 "$EFIPATH"
 		mkfs.ext4 "$ROOTPATH"
 		mkswap "$SWAPPATH"
-	if [ "$ANSWER" == "n" ]
+	elif [ "$ANSWER" == "n" ]
 	then
 		printf "Exiting the script!\n"
 		exit
