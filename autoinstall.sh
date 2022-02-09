@@ -49,9 +49,9 @@ then
 	printf "%s\n" "$ANSWER"
 	if [ "$ANSWER" == "y" ]
 		then 
-			printf "success"
+			printf "Suggested auto partitiong has not been implemented yet.\n"
 		else
-			printf "nosuccess"
+			printf "Have you partitioned the disk yourself already? [y/n]: "
 	fi
 else										  
 	printf "Error! Invalid answer\n"
