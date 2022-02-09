@@ -9,7 +9,7 @@ sed -i '/ParallelDownloads = 5/s/^#//g' /etc/pacman.conf
 
 
 # Configuring the installer for legacy BIOS or UEFI boot
-printf "Select the boot mode\n 1- For UEFI systems\n 2- For legacy BIOS systems: "
+printf "1- For UEFI systems\n 2- For legacy BIOS systems\n Select the boot mode: "
 read BOOTMODE
 printf "%s\n" "$BOOTMODE"
 
