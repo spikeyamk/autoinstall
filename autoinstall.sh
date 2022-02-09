@@ -328,7 +328,7 @@ mount "$EFIPATH" /mnt/boot
 swapon "$SWAPPATH"
 
 
-# Printing the variables
+# Saving variables to config
 printf "Variables you chose:\n" >> config
 printf "+++++++++++++++++++++++++++++\n" >> config
 printf "BOOTMODE=$BOOTMODE\n" >> config
@@ -341,6 +341,22 @@ printf "EFIPATH=$EFIPATH\n" >> config
 printf "SWAPPATH=$SWAPPATH\n" >> config
 printf "ROOTPATH=$ROOTPATH\n" >> config
 printf "+++++++++++++++++++++++++++++\n" >> config
+
+
+# Printing the variables
+printf "Variables you chose:\n"
+printf "+++++++++++++++++++++++++++++\n"
+printf "BOOTMODE=$BOOTMODE\n"
+printf "AUTOPART=$AUTOPART\n"
+printf "DISKTOAUTOPART=$DISKTOAUTOPART\n"
+printf "USESWAP=$USESWAP\n"
+printf "SWAPSIZE=$SWAPSIZE\n"
+printf "DISKTOPART=$DISKTOPART\n"
+printf "EFIPATH=$EFIPATH\n"
+printf "SWAPPATH=$SWAPPATH\n"
+printf "ROOTPATH=$ROOTPATH\n"
+printf "+++++++++++++++++++++++++++++\n"
+
 
 printf "Everything OK? [y/n]: "
 read ANSWER
