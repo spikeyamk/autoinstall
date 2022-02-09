@@ -19,7 +19,7 @@ sed -i '/ParallelDownloads = 5/s/^#//g' /etc/pacman.conf
 
 
 # Configuring the installer for legacy BIOS or UEFI boot
-bootmodesel=${1:-"start"}
+bootmodesel=${1:-"bootmodesel"}
 bootmodesel:
 
 printf "1- For UEFI systems\n2- For legacy BIOS systems\nSelect the boot mode [1/2]: "
