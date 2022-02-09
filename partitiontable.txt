@@ -1,6 +1,6 @@
 
                                       UEFI with GPT
-______________________________________________________________________________________
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 Mount point   Partition                 Partition type 	       Suggested size
 /mnt/boot     /dev/efi__partition 	EFI system	       At least 300 MiB
 [SWAP]	      /dev/swap_partition	Linux swap             More than 512 MiB
@@ -10,7 +10,7 @@ Mount point   Partition                 Partition type 	       Suggested size
 
 
                                       BIOS with MBR
-_____________________________________________________________________________________ 
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 Mount point   Partition			Partition type	       Suggested size
 [SWAP]	      /dev/swap_partition	Linux swap	       More than 512 MiB
 /mnt	      /dev/root_partition	Linux	               Remainder of the device
