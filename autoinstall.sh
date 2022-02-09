@@ -97,10 +97,10 @@ then
 	then
 		printf "Exiting the script!\n"
 		exit
-	else
-		printf "Error! Invalid answer\n"
-		jumpto $start
 	fi
+else
+	printf "Error! Invalid answer\n"
+		jumpto $start
 fi
 
 # Mounting the filesystems
