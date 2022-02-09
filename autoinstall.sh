@@ -59,7 +59,7 @@ then
 		read DISKTOAUTOPART
 		DISKTOAUTOPART=$(lsscsi | grep disk | awk 'NR==$DISKTOAUTOPART' | awk '{ print $(NF) }')
 
-		printf "$DISKTOAUTOPART"
+		printf "%s\n" "$DISKTOAUTOPART"
 
 
 
