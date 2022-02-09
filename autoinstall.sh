@@ -55,7 +55,7 @@ then
 	if [ "$AUTOPART" == "y" ]
 	then 
 		printf "Which disk would you like to auto parition?\n"
-		lsscsi -s | grep disk
+		lsscsi | grep disk
 		read DISKTOAUTOPART
 		DISKTOAUTOPART=$(lsscsi | grep disk | awk 'NR==$DISKTOAUTOPART' | awk '{ print $(NF) }')
 
