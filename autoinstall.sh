@@ -64,7 +64,7 @@ then
 					read ROOTPATH
 					printf "%s\n" "$ROOTPATH"		
 				else
-					printf "You can use the fidsk command line utility (see man fidsk (8)) to partition the disks and then rerun the script.\n"
+					printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
 					cat partitiontable.txt
 					exit
 			fi
