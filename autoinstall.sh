@@ -20,10 +20,10 @@ read ANSWER
 
 if [ "$ANSWER" = "y" ]
 	then
-		printf"success\n"
+		printf "success\n"
     sleep 2
 	else 
-		printf"nosuccess\n"
+		printf "nosuccess\n"
 fi
 
 
