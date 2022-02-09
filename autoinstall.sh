@@ -56,7 +56,7 @@ then
 	then 
 		printf "Available disk for installation\n"
 		lsscsi | grep disk | nl -w2 -s'> '
-        printf "Which disk would you like to auto parition? [choose a number 1, 2, 3 etc.]\n"
+        printf "Which disk would you like to auto parition? [choose a number 1, 2, 3 etc.]: "
 		read DISKTOAUTOPART
 		DISKTOAUTOPART=$(lsscsi | grep disk | sed -n $((DISKTOAUTOPART))p | awk '{print $(NF)}')
 		printf "%s\n" "$DISKTOAUTOPART"
@@ -308,7 +308,7 @@ fi
 
 
 # Formatting the partitions
-printf "Following partitions will be formatted: %s, %s, %s\n" "$EFIPATH $ROOTPATH $SWAPPATH"
+printf "Following partitions will be formatted: $EFIPATH, $SWAPPATH, $ROOTPATH"
 printf "All data on them will be permanently erased. Do you wish to proceed? [y/n]: "
 
 read ANSWER
