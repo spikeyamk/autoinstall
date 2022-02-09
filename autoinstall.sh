@@ -9,6 +9,9 @@ function jumpto
 	exit
 }
 
+# Install lsscsi
+pacman -S --noconfirm lsscsi
+
 
 # Activating ntp time synchronization
 timedatectl set-ntp true
@@ -43,7 +46,7 @@ fi
 
 
 # Suggested auto partitioning
-printf "Do you wish to use suggested auto partitiong of the drives? [y/n]: "
+printf "Do you wish to use suggested auto partitioning of the drives? [y/n]: "
 read AUTOPART
 
 if [ "$AUTOPART" == "y" ] || [ "$AUTOPART" == "n" ]
@@ -51,6 +54,37 @@ then
 	printf "%s\n" "$AUTOPART"
 	if [ "$AUTOPART" == "y" ]
 	then 
+		printf "Which disk would you like to auto parition?\n"
+		lsscsi -s | grep disk
+		read DISKTOAUTOPART
+		DISKTOAUTOPART=$(lsscsi | grep disk | awk 'NR==$DISKTOAUTOPART' | awk '{ print $(NF) }')
+
+		printf "$DISKTOAUTOPART"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		printf "Suggested auto partitiong has not been implemented yet.\n"
 		exit
 	elif [ "$AUTOPART" == "n" ]
