@@ -154,18 +154,7 @@ then
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-	elif [ "$AUTOPART" == "n" ]
+    elif [ "$AUTOPART" == "n" ]
 	then
         # Manual partitioning
 		printf "Have you partitioned the disk yourself already? [y/n]: "
