@@ -53,10 +53,7 @@ then
 	then 
 		printf "Suggested auto partitiong has not been implemented yet.\n"
 		exit
-	else
-		
-		
-		
+	elif [ "$AUTOPART" == "n" ]
 		# Manual partitioning
 		printf "Have you partitioned the disk yourself already? [y/n]: "
 		read ANSWER
@@ -144,17 +141,43 @@ then
 				# End of Linux root filesystem tests
 				###	
 
-				
+            elif [ "$USESWAP" == "n" ]
+            then
+                ###
+				# Linux root filesystem tests
+				printf "Specify [Linux filesystem(root)] PATH: "
+				read ROOTPATH
+
+				printf "%s\n" "$ROOTPATH"
+				TEST=$(find "$ROOTPATH")
+				if [ "$TEST" != "$ROOTPATH" ]
+				then
+					printf "Error! Specified Linux root parition does not exist\n"
+					jumpto $start
+				fi
+				# Linux root filesystem partition type test
+				TEST=$(find "$ROOTPATH" | sed 's/[0-9]//' | fdisk -l | grep "$ROOTPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
+				if [ "$TEST" != "Linux filesystem" ]
+				then
+					printf "Error! Specified Linux root parition is not the correct partition type\n"
+					jumpto $start
+				fi
+				# End of Linux root filesystem tests
+				###
 			else
-				printf "I selected N\n"	
-				printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
-				cat partitiontable.txt
-				exit
+                printf "Error! Invalid answer\n"
+                jumpto $start
+
 			fi
-		fi	
-	else										  
-		printf "Error! Invalid answer\n"
-		jumpto $start
+        elif [ "$ANSWER" == "n" ]
+        then
+            printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
+            cat partitiontable.txt
+            exit
+        else
+        	printf "Error! Invalid answer\n"
+            jumpto $start
+        fi
 	fi
 else										  
 	printf "Error! Invalid answer\n"
@@ -192,6 +215,7 @@ mount "$EFIPATH" /mnt/boot
 swapon "$SWAPPATH"
 
 
+# Installing base
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 
