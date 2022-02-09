@@ -344,7 +344,7 @@ swapon "$SWAPPATH"
 # Saving variables to config
 printf "Variables you chose:\n" >> config
 printf "+++++++++++++++++++++++++++++\n" >> config
-printf "UEFI_ENABLED=$UEFI_ENABLED\n"
+printf "UEFI_ENABLED=$UEFI_ENABLED\n" >> config
 printf "BOOTMODE=$BOOTMODE\n" >> config
 printf "AUTOPART=$AUTOPART\n" >> config
 printf "DISKTOAUTOPART=$DISKTOAUTOPART\n" >> config
@@ -380,8 +380,9 @@ then
 	# Installing the base
 	pacstrap /mnt base linux linux-firmware
 	genfstab -U /mnt >> /mnt/etc/fstab
-	printf "Success!\n"
-	printf "Do you wish to chroot into your newly installed Arch Linux base and continue the installation? [y/n]: "
+
+	printf "\e[1;32mSuccess!\n\e[0m"
+	printf "\e[1;32mDo you wish to chroot into your newly installed Arch Linux base and continue the installation? [y/n]: \e[0m"
 	read ANSWER
 	if [ "$ANSWER" == "y" ]
 	then
