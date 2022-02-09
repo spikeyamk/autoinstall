@@ -97,56 +97,61 @@ then
 
 			###
 			# Swap partition tests
-			printf "Specify [Linux swap] PATH (leave blank if you do not wish to use a swap partition): "
-			read SWAPPATH
-
-			TEST=$(find "$SWAPPATH")
-			if [ "$TEST" != "$SWAPPATH" ]
+			printf "Do you wish to use a linux swap partition? [y/n]: "
+			read USESWAP
+			if [ "$USESWAP" == "y"]
 			then
-				printf "Error! Specified swap partition does not exist\n"
-				jumpto $start
-			fi
+		        	printf "Specify the linux swap partition [Linux swap] PATH: "
+				read SWAPPATH
+
+				TEST=$(find "$SWAPPATH")
+				if [ "$TEST" != "$SWAPPATH" ]
+				then
+					printf "Error! Specified swap partition does not exist\n"
+					jumpto $start
+				fi
 			
-			# Linux swap partition type test	
-			TEST=$(find "$SWAPPATH" | sed 's/[0-9]//' | fdisk -l | grep "$SWAPPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
-			if [ "$TEST" != "Linux swap" ]
-			then
-				printf "Error! Specified Linux swap parition is not the correct partition type\n"
-				jumpto $start
-			fi
-			# End of swap partition tests
-			###
+				# Linux swap partition type test	
+				TEST=$(find "$SWAPPATH" | sed 's/[0-9]//' | fdisk -l | grep "$SWAPPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
+				if [ "$TEST" != "Linux swap" ]
+				then
+					printf "Error! Specified Linux swap parition is not the correct partition type\n"
+					jumpto $start
+				fi
+				# End of swap partition tests
+				###
 
 
-			###
-			# Linux root filesystem tests
-			printf "Specify [Linux filesystem(root)] PATH: "
-			read ROOTPATH
+				###
+				# Linux root filesystem tests
+				printf "Specify [Linux filesystem(root)] PATH: "
+				read ROOTPATH
 			
-			printf "%s\n" "$ROOTPATH"
-			TEST=$(find "$ROOTPATH")
-			if [ "$TEST" != "$ROOTPATH" ]
-			then
-				printf "Error! Specified Linux root parition does not exist\n"
-				jumpto $start
-			fi
-			# Linux root filesystem partition type test	
-			TEST=$(find "$ROOTPATH" | sed 's/[0-9]//' | fdisk -l | grep "$ROOTPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
-			if [ "$TEST" != "Linux filesystem" ]
-			then
-				printf "Error! Specified Linux root parition is not the correct partition type\n"
-				jumpto $start
-			fi
-			# End of Linux root filesystem tests
-			###	
+				printf "%s\n" "$ROOTPATH"
+				TEST=$(find "$ROOTPATH")
+				if [ "$TEST" != "$ROOTPATH" ]
+				then
+					printf "Error! Specified Linux root parition does not exist\n"
+					jumpto $start
+				fi
+				# Linux root filesystem partition type test	
+				TEST=$(find "$ROOTPATH" | sed 's/[0-9]//' | fdisk -l | grep "$ROOTPATH" | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//' | sed 's/[^ ]* *//')
+				if [ "$TEST" != "Linux filesystem" ]
+				then
+					printf "Error! Specified Linux root parition is not the correct partition type\n"
+					jumpto $start
+				fi
+				# End of Linux root filesystem tests
+				###	
 
 				
-		else
-			printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
-			cat partitiontable.txt
-			exit
+				else
+					printf "You can use the fdisk command line utility (see man fdisk (8)) to partition the disks and then rerun the script.\n"
+					cat partitiontable.txt
+					exit
+				fi
+			fi	
 		fi
-	fi
 else										  
 	printf "Error! Invalid answer\n"
 	jumpto $start
