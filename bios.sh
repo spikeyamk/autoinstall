@@ -49,8 +49,8 @@ function biospart() {
                         echo 2;
                         echo w;
                     ) | fdisk $DISKTOAUTOPART
-                    SWAPPATH="$DISKTOAUTOPART""2"
-                    ROOTPATH="$DISKTOAUTOPART""3"
+                    SWAPPATH="$DISKTOAUTOPART""1"
+                    ROOTPATH="$DISKTOAUTOPART""2"
                 elif [ "$ANSWER" == "n" ]
                 then
                     printf "Exiting the script!\n"
@@ -77,7 +77,7 @@ function biospart() {
                         echo a;
                         echo w;
                     ) | fdisk $DISKTOAUTOPART
-                    ROOTPATH="$DISKTOAUTOPART""2"
+                    ROOTPATH="$DISKTOAUTOPART""1"
                 elif [ "$ANSWER" == "n" ]
                 then
                     printf "Exiting the script!\n"
