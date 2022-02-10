@@ -6,7 +6,7 @@ GITPATH=$(pwd)
 git clone https://aur.archlinux.org/yay
 cd yay
 makepkg -si
-
+cd
 
 
 # Installing additional bloat
@@ -20,12 +20,15 @@ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 git clone https://www.github.com/spikeyamk/st-spikeyamk
 cd st-spikeyamk
 makepkg -si
+cd
 
 git clone https://www.github.com/spikeyamk/dwm-spikeyamk
 cd dwm-spikeyamk
 makepkg -si
 cp "$GITPATH"/.xinitrc ~/
+cd
 
 git clone https://www.github.com/spikeyamk/dwmblocks-spikeyamk
 cd dwmblocks-spikeyamk
 makepkg -si
+cd
