@@ -20,7 +20,7 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 printf "Choose the hostname of the machine: "
 read hostnm
 echo "$hostnm" >> /etc/hostname
-printf "127.0.0.1    localhost\n::1    localhost\n127.0.1.1    %s.localdomain    %s" "$hostnm, $hostnm" >> /etc/hosts
+printf "127.0.0.1    localhost\n::1    localhost\n127.0.1.1    $hostnm.localdomain    $hostnm\n" >> /etc/hosts
 
 
 
