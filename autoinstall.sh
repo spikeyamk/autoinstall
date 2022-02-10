@@ -83,38 +83,38 @@ fi
 # Saving variables to config
 printf "Variables you chose:\n" >> config
 printf "+++++++++++++++++++++++++++++\n" >> config
-printf "GITPATH=$GITPATH\n" >> config
-printf "UEFI_ENABLED=$UEFI_ENABLED\n" >> config
-printf "SECURE_BOOT_ENABLED=$SECURE_BOOT_ENABLED\n" >> config
-printf "BOOTMODE=$BOOTMODE\n" >> config
-printf "AUTOPART=$AUTOPART\n" >> config
-printf "DISKTOAUTOPART=$DISKTOAUTOPART\n" >> config
-printf "USESWAP=$USESWAP\n" >> config
-printf "SWAPSIZE=$SWAPSIZE\n" >> config
-printf "DISKTOPART=$DISKTOPART\n" >> config
-printf "BIOSPATH=$BIOSPATH\n" >> config
-printf "EFIPATH=$EFIPATH\n" >> config
-printf "SWAPPATH=$SWAPPATH\n" >> config
-printf "ROOTPATH=$ROOTPATH\n" >> config
+printf "GITPATH=\"$GITPATH\"\n" >> config
+printf "UEFI_ENABLED=\"$UEFI_ENABLED\"\n" >> config
+printf "SECURE_BOOT_ENABLED=\"$SECURE_BOOT_ENABLED\"\n" >> config
+printf "BOOTMODE=\"$BOOTMODE\"\n" >> config
+printf "AUTOPART=\"$AUTOPART\"\n" >> config
+printf "DISKTOAUTOPART=\"$DISKTOAUTOPART\"\n" >> config
+printf "USESWAP=\"$USESWAP\"\n" >> config
+printf "SWAPSIZE=\"$SWAPSIZE\"\n" >> config
+printf "DISKTOPART=\"$DISKTOPART\"\n" >> config
+printf "BIOSPATH=\"$BIOSPATH\"\n" >> config
+printf "EFIPATH=\"$EFIPATH\"\n" >> config
+printf "SWAPPATH=\"$SWAPPATH\"\n" >> config
+printf "ROOTPATH=\"$ROOTPATH\"\n" >> config
 printf "+++++++++++++++++++++++++++++\n" >> config
 
 
 # Printing the variables
 printf "Variables you chose:\n"
 printf "+++++++++++++++++++++++++++++\n"
-printf "GITPATH=$GITPATH\n"
-printf "UEFI_ENABLED=$UEFI_ENABLED\n"
-printf "SECURE_BOOT_ENABLED=$SECURE_BOOT_ENABLED\n"
-printf "BOOTMODE=$BOOTMODE\n"
-printf "AUTOPART=$AUTOPART\n"
-printf "DISKTOAUTOPART=$DISKTOAUTOPART\n"
-printf "USESWAP=$USESWAP\n"
-printf "SWAPSIZE=$SWAPSIZE\n"
-printf "DISKTOPART=$DISKTOPART\n"
-printf "BIOSPATH=$BIOSPATH\n"
-printf "EFIPATH=$EFIPATH\n"
-printf "SWAPPATH=$SWAPPATH\n"
-printf "ROOTPATH=$ROOTPATH\n"
+printf "GITPATH=\"$GITPATH\"\n" >> config
+printf "UEFI_ENABLED=\"$UEFI_ENABLED\"\n"
+printf "SECURE_BOOT_ENABLED=\"$SECURE_BOOT_ENABLED\"\n"
+printf "BOOTMODE=\"$BOOTMODE\"\n"
+printf "AUTOPART=\"$AUTOPART\"\n"
+printf "DISKTOAUTOPART=\"$DISKTOAUTOPART\"\n"
+printf "USESWAP=\"$USESWAP\"\n"
+printf "SWAPSIZE=\"$SWAPSIZE\"\n"
+printf "DISKTOPART=\"$DISKTOPART\"\n"
+printf "BIOSPATH=\"$BIOSPATH\"\n"
+printf "EFIPATH=\"$EFIPATH\"\n"
+printf "SWAPPATH=\"$SWAPPATH\"\n"
+printf "ROOTPATH=\"$ROOTPATH\"\n"
 printf "+++++++++++++++++++++++++++++\n"
 
 
