@@ -81,6 +81,7 @@ fi
 
 
 # Saving variables to config
+printf "#!/bin/bash"
 printf "Variables you chose:\n" >> config
 printf "+++++++++++++++++++++++++++++\n" >> config
 printf "GITPATH=\"$GITPATH\"\n" >> config

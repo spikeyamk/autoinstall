@@ -1,5 +1,7 @@
 #!/bin/bash
 
+GITPATH=$(pwd)
+source "$GITPATH"/config
 
 # Configuring the system running everything in chroot
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
@@ -98,9 +100,13 @@ else
 	jumpto $start
 fi
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
-
+if [ "$UEFI_ENABLED" == "y" ]
+then
+    grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+    grub-mkconfig -o /boot/grub/grub.cfg
+elif [ "$UEFI_ENABLED" == "n" ]
+    grub-install --target=i386-pc "$BIOSPATH"
+fi
 
 
 # Installing xorg and configuring it + installing some GUI bloat
