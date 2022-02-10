@@ -190,6 +190,13 @@ function uefipart() {
                     printf "\e[1;31mError! Specified Linux root parition is not the correct partition type\n\e[0m"
                     jumpto $start
                 fi
+                # Linux root filesystem parition size test
+                TEST=$(lsblk -b "$ROOTPATH" | awk '{print $4}' | awk 'NR==2')
+                if [[ $((TEST)) -lt 4294967296 ]]
+                then
+                    printf "\e[1;31mError! The Linux root filesystem partition is too small. Its size has to be at least 300 MiB.\n\e[0m"
+                    exit
+                fi
                 # End of Linux root filesystem tests
                 ###
 
@@ -213,6 +220,13 @@ function uefipart() {
                 then
                     printf "\e[1;31mError! Specified Linux root parition is not the correct partition type\n\e[0m"
                     jumpto $start
+                fi
+                # Linux root filesystem parition size test
+                TEST=$(lsblk -b "$ROOTPATH" | awk '{print $4}' | awk 'NR==2')
+                if [[ $((TEST)) -lt 4294967296 ]]
+                then
+                    printf "\e[1;31mError! The Linux root filesystem partition is too small. Its size has to be at least 300 MiB.\n\e[0m"
+                    exit
                 fi
                 # End of Linux root filesystem tests
                 ###
