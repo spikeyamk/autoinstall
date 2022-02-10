@@ -29,6 +29,7 @@ function biospart() {
                 read ANSWER
                 if [ "$ANSWER" == "y" ]
                 then
+                    wipefs -a "$DISKTOAUTOPART"
                     (
                         echo o;
                         echo n;
@@ -65,6 +66,7 @@ function biospart() {
                 read ANSWER
                 if [ "$ANSWER" == "y" ]
                 then
+                    wipefs -a "$DISKTOAUTOPART"
                     (
                         echo o;
                         echo n;

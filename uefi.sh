@@ -27,6 +27,7 @@ function uefipart() {
                 read ANSWER
                 if [ "$ANSWER" == "y" ]
                 then
+                    wipefs -a "$DISKTOAUTOPART"
                     (
                     echo g;
                     echo n;
@@ -67,6 +68,7 @@ function uefipart() {
                 read ANSWER
                 if [ "$ANSWER" == "y" ]
                 then
+                    wipefs -a "$DISKTOAUTOPART"
                     (
                         echo g;
                         echo n;
