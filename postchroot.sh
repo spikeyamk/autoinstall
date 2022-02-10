@@ -107,6 +107,7 @@ then
 elif [ "$UEFI_ENABLED" == "n" ]
 then
     grub-install --target=i386-pc "$BIOSPATH"
+    grub-mkconfig -o /boot/grub/grub.cfg
 fi
 
 
