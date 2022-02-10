@@ -1,5 +1,7 @@
 #!/bin/bash
 
+GITPATH=$(pwd)
+
 # Enabling the AUR
 git clone https://aur.archlinux.org/yay
 cd yay
@@ -22,6 +24,7 @@ makepkg -si
 git clone https://www.github.com/spikeyamk/dwm-spikeyamk
 cd dwm-spikeyamk
 makepkg -si
+cp "$GITPATH"/.xinitrc ~/
 
 git clone https://www.github.com/spikeyamk/dwmblocks-spikeyamk
 cd dwmblocks-spikeyamk
