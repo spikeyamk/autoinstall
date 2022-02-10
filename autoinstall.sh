@@ -2,6 +2,7 @@
 
 GITPATH=$(pwd)
 UEFI_ENABLED=n
+SECURE_BOOT_ENABLED=n
 
 source "$GITPATH"/uefi.sh
 
@@ -62,6 +63,7 @@ then
 		printf "\e[1;32mUEFI Firmware detected!\n\e[0m"
 		printf "\e[1;32m$UEFI_ENABLED\n\e[0m"
 		UEFI_ENABLED=y
+		SECURE_BOOT_ENABLED=y
 		uefipart
 	fi
 elif [ "$BOOTMODE" == "3" ]
@@ -82,6 +84,7 @@ printf "Variables you chose:\n" >> config
 printf "+++++++++++++++++++++++++++++\n" >> config
 printf "GITPATH=$GITPATH\n" >> config
 printf "UEFI_ENABLED=$UEFI_ENABLED\n" >> config
+printf "SECURE_BOOT_ENABLED=$SECURE_BOOT_ENABLED\n" >> config
 printf "BOOTMODE=$BOOTMODE\n" >> config
 printf "AUTOPART=$AUTOPART\n" >> config
 printf "DISKTOAUTOPART=$DISKTOAUTOPART\n" >> config
@@ -99,6 +102,7 @@ printf "Variables you chose:\n"
 printf "+++++++++++++++++++++++++++++\n"
 printf "GITPATH=$GITPATH\n"
 printf "UEFI_ENABLED=$UEFI_ENABLED\n"
+printf "SECURE_BOOT_ENABLED=$SECURE_BOOT_ENABLED\n"
 printf "BOOTMODE=$BOOTMODE\n"
 printf "AUTOPART=$AUTOPART\n"
 printf "DISKTOAUTOPART=$DISKTOAUTOPART\n"
