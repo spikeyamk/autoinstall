@@ -25,7 +25,7 @@ makepkg -si
 git clone https://www.github.com/spikeyamk/dwm-spikeyamk
 cd dwm-spikeyamk
 makepkg -si
-cp "$GITPATH"/.xinitrc ~/
+cp "$GITPATH"/xinitrc ~/
 
 
 git clone https://www.github.com/spikeyamk/dwmblocks-spikeyamk
