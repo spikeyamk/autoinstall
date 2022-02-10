@@ -5,6 +5,7 @@ UEFI_ENABLED=n
 SECURE_BOOT_ENABLED=n
 
 source "$GITPATH"/uefi.sh
+source "$GITPATH"/bios.sh
 
 # Jumpto function definition
 function jumpto
@@ -68,8 +69,8 @@ then
 	fi
 elif [ "$BOOTMODE" == "3" ]
 then
-	printf "Legacy BIOS has not been implemented yet.\n"
-	exit
+	UEFI_ENABLED=n
+	biospart
 else										  
 	printf '\e[31m%s\e[0m' "Error! Invalid answer\n"
 	jumpto $start
@@ -91,6 +92,7 @@ printf "DISKTOAUTOPART=$DISKTOAUTOPART\n" >> config
 printf "USESWAP=$USESWAP\n" >> config
 printf "SWAPSIZE=$SWAPSIZE\n" >> config
 printf "DISKTOPART=$DISKTOPART\n" >> config
+printf "BIOSPATH=$BIOSPATH\n" >> config
 printf "EFIPATH=$EFIPATH\n" >> config
 printf "SWAPPATH=$SWAPPATH\n" >> config
 printf "ROOTPATH=$ROOTPATH\n" >> config
@@ -109,6 +111,7 @@ printf "DISKTOAUTOPART=$DISKTOAUTOPART\n"
 printf "USESWAP=$USESWAP\n"
 printf "SWAPSIZE=$SWAPSIZE\n"
 printf "DISKTOPART=$DISKTOPART\n"
+printf "BIOSPATH=$BIOSPATH\n"
 printf "EFIPATH=$EFIPATH\n"
 printf "SWAPPATH=$SWAPPATH\n"
 printf "ROOTPATH=$ROOTPATH\n"
