@@ -117,6 +117,13 @@ function uefipart() {
             read EFIPATH
             printf "%s\n" "$EFIPATH"
 
+            # Disk partition table style test
+            TEST=$(find "$EFIPATH" | sed 's/[0-9]//' | fdisk -l | grep "Disklabel" | awk '{ print $(NF) }')
+            if [ "$TEST" != "gpt" ]
+            then
+                printf "\e[1;31mError! The disk uses an incorrect partition table style. Exiting the script!\e[0m"
+                exit
+            fi
 
             # EFI Partition tests
             ###
