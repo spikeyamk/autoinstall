@@ -103,7 +103,7 @@ printf "+++++++++++++++++++++++++++++\n" >> config
 # Printing the variables
 printf "Variables you chose:\n"
 printf "+++++++++++++++++++++++++++++\n"
-printf "GITPATH=\"$GITPATH\"\n" >> config
+printf "GITPATH=\"$GITPATH\"\n"
 printf "UEFI_ENABLED=\"$UEFI_ENABLED\"\n"
 printf "SECURE_BOOT_ENABLED=\"$SECURE_BOOT_ENABLED\"\n"
 printf "BOOTMODE=\"$BOOTMODE\"\n"

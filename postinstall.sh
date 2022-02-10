@@ -1,29 +1,28 @@
 #!/bin/bash
 
 # Enabling the AUR
-sudo pacman -S base-devel
-git clone https://aur.archlinux.org/paru
-cd paru 
+git clone https://aur.archlinux.org/yay
+cd yay
 makepkg -si
 
 
 
 # Installing additional bloat
-paru -S brave-bin spotify nerd-fonts-ubuntu-mono
-sudo nvidia-xconfig
+yay -S spotify
+# sudo nvidia-xconfig
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
 
 
 # Installing the suckless utilities
-git clone https://www.github.com/spikeyamk/st
-cd st
+git clone https://www.github.com/spikeyamk/st-spikeyamk
+cd st-spikeyamk
 sudo make clean install
 
-git clone https://www.github.com/spikeyamk/dwm
-cd dwm
+git clone https://www.github.com/spikeyamk/dwm-spikeyamk
+cd dwm-spikeyamk
 sudo make clean install
 
-git clone https://www.github.com/spikeyamk/dwmblocks
-cd dwmblocks
+git clone https://www.github.com/spikeyamk/dwmblocks-spikeyamk
+cd dwmblocks-spikeyamk
 sudo make clean install
