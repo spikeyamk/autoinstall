@@ -8,7 +8,7 @@ cd yay
 makepkg -si
 
 
-
+# sudo pacman -S --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
 # Installing additional bloat
 yay -S spotify
 # sudo nvidia-xconfig
