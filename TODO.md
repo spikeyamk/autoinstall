@@ -29,7 +29,6 @@ View the raw content of this file to understand the format.
   - [ ] Minimal
   - [ ] Xorg 
   - [ ] dwm 
-  - [ ] Sub-task or description  
 
 ### In Progress
 
