@@ -23,6 +23,13 @@ View the raw content of this file to understand the format.
 - [ ] Fix the homepage ~1d #bug @jane  
   - [ ] Sub-task or description  
 - [ ] Add an option to select different locales 
+- [ ] Add error checking and scripting logs 
+- [ ] Automate video drivers setups 
+- [ ] Add support for different profiles
+  - [ ] Minimal
+  - [ ] Xorg 
+  - [ ] dwm 
+  - [ ] Sub-task or description  
 
 ### In Progress
 
