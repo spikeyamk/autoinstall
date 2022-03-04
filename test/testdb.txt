@@ -1,0 +1,357 @@
+aa_DJ	— Afar —	DJIBOUTI	glibc-HEAD
+aa_ER	— Afar —	ERITREA	glibc-HEAD
+aa_ER@saaho	— Afar —	ERITREA	glibc-HEAD
+aa_ET	— Afar —	ETHIOPIA	glibc-HEAD
+af_ZA	— Afrikaans —	SOUTH AFRICA	glibc-HEAD
+agr_PE	— Aguaruna —	PERU	mixed
+ak_GH	— Akan —	GHANA	mixed
+am_ET	— Amharic —	ETHIOPIA	mixed
+an_ES	— Aragonese —	SPAIN	mixed
+anp_IN	— Angika —	INDIA	mixed
+ar_AE	— Arabic —	UNITED ARAB EMIRATES	glibc-HEAD
+ar_BH	— Arabic —	BAHRAIN	glibc-HEAD
+ar_DZ	— Arabic —	ALGERIA	mixed
+ar_EG	— Arabic —	EGYPT	glibc-HEAD
+ar_IN	— Arabic —	INDIA	glibc-HEAD
+ar_IQ	— Arabic —	IRAQ	glibc-HEAD
+ar_JO	— Arabic —	JORDAN	glibc-HEAD
+ar_KW	— Arabic —	KUWAIT	glibc-HEAD
+ar_LB	— Arabic —	LEBANON	glibc-HEAD
+ar_LY	— Arabic —	LIBYAN ARAB JAMAHIRIYA	glibc-HEAD
+ar_MA	— Arabic —	MOROCCO	glibc-HEAD
+ar_OM	— Arabic —	OMAN	glibc-HEAD
+ar_QA	— Arabic —	QATAR	glibc-HEAD
+ar_SA	— Arabic —	SAUDI ARABIA	glibc-HEAD
+ar_SD	— Arabic —	SUDAN	glibc-HEAD
+ar_SS	— Arabic —	SOUTH SOUDAN	glibc-HEAD
+ar_SY	— Arabic —	SYRIAN ARAB REPUBLIC	glibc-HEAD
+ar_TN	— Arabic —	TUNISIA	glibc-HEAD
+ar_YE	— Arabic —	YEMEN	glibc-HEAD
+as_IN	— Assamese —	INDIA	glibc-HEAD
+ast_ES	— Asturian —	SPAIN	mixed
+ayc_PE	— Southern Aymara —	PERU	glibc-HEAD
+ay_PE	— Aymara —	PERU	local
+az_AZ	— Azerbaijani —	AZERBAIJAN	glibc-HEAD
+az_IR	— Azerbaijani —	IRAN, ISLAMIC REPUBLIC OF	glibc-HEAD
+be_BY	— Belarusian —	BELARUS	glibc-HEAD
+be_BY@latin	— Belarusian —	BELARUS	glibc-HEAD
+bem_ZM	— Bemba (Zambia) —	ZAMBIA	mixed
+ber_DZ	— Berber languages —	ALGERIA	mixed
+ber_MA	— Berber languages —	MOROCCO	glibc-HEAD
+bg_BG	— Bulgarian —	BULGARIA	glibc-HEAD
+bhb_IN	— Bhili —	INDIA	glibc-HEAD
+bho_IN	— Bhojpuri —	INDIA	glibc-HEAD
+bho_NP	— Bhojpuri —	NEPAL	glibc-HEAD
+bi_TV	— Bislama —	TUVALU	local
+bi_VU	— Bislama —	VANUATU	glibc-HEAD
+bm_ML	— Bambara —	MALI	None
+bn_BD	— Bengali —	BANGLADESH	glibc-HEAD
+bn_IN	— Bengali —	INDIA	glibc-HEAD
+bo_CN	— Tibetan —	CHINA	glibc-HEAD
+bo_IN	— Tibetan —	INDIA	glibc-HEAD
+br_FR	— Breton —	FRANCE	glibc-HEAD
+br_FR@euro	— Breton —	FRANCE	glibc-HEAD
+brx_IN	— Bodo (India) —	INDIA	glibc-HEAD
+bs_BA	— Bosnian —	BOSNIA AND HERZEGOVINA	glibc-HEAD
+byn_ER	— Bilin —	ERITREA	glibc-HEAD
+ca_AD	— Catalan —	ANDORRA	glibc-HEAD
+ca_ES	— Catalan —	SPAIN	glibc-HEAD
+ca_ES@euro	— Catalan —	SPAIN	glibc-HEAD
+ca_ES@valencia	— Catalan —	SPAIN	glibc-HEAD
+ca_FR	— Catalan —	FRANCE	glibc-HEAD
+ca_IT	— Catalan —	ITALY	glibc-HEAD
+ce_RU	— Chechen —	RUSSIAN FEDERATION	mixed
+chr_US	— Cherokee —	UNITED STATES OF AMERICA	glibc-HEAD
+ckb_IQ	— Central Kurdish —	IRAQ	glibc-HEAD
+cmn_TW	— Mandarin Chinese —	TAIWAN	mixed
+crh_UA	— Crimean Tatar —	UKRAINE	mixed
+csb_PL	— Kashubian —	POLAND	glibc-HEAD
+cs_CZ	— Czech —	CZECHIA	glibc-HEAD
+cv_RU	— Chuvash —	RUSSIAN FEDERATION	glibc-HEAD
+cy_GB	— Welsh —	UNITED KINGDOM	glibc-HEAD
+da_DK	— Danish —	DENMARK	glibc-HEAD
+de_AT	— German —	AUSTRIA	glibc-HEAD
+de_AT@euro	— German —	AUSTRIA	glibc-HEAD
+de_BE	— German —	BELGIUM	glibc-HEAD
+de_BE@euro	— German —	BELGIUM	glibc-HEAD
+de_CH	— German —	SWITZERLAND	glibc-HEAD
+de_DE	— German —	GERMANY	glibc-HEAD
+de_DE@euro	— German —	GERMANY	glibc-HEAD
+de_IT	— German —	ITALY	glibc-HEAD
+de_LI	— German —	LIECHTENSTEIN	glibc-HEAD
+de_LU	— German —	LUXEMBOURG	glibc-HEAD
+de_LU@euro	— German —	LUXEMBOURG	glibc-HEAD
+doi_IN	— Dogri (macrolanguage) —	INDIA	glibc-HEAD
+dsb_DE	— Lower Sorbian —	GERMANY	glibc-HEAD
+dv_MV	— Dhivehi —	MALDIVES	glibc-HEAD
+dz_BT	— Dzongkha —	BHUTAN	glibc-HEAD
+el_CY	— Modern Greek (1453-) —	CYPRUS	mixed
+el_GR	— Modern Greek (1453-) —	GREECE	glibc-HEAD
+el_GR@euro	— Modern Greek (1453-) —	GREECE	glibc-HEAD
+en_AG	— English —	ANTIGUA AND BARBUDA	glibc-HEAD
+en_AU	— English —	AUSTRALIA	glibc-HEAD
+en_BW	— English —	BOTSWANA	glibc-HEAD
+en_CA	— English —	CANADA	glibc-HEAD
+en_DK	— English —	DENMARK	glibc-HEAD
+en_GB	— English —	UNITED KINGDOM	glibc-HEAD
+en_HK	— English —	HONG KONG	glibc-HEAD
+en_IE	— English —	IRELAND	glibc-HEAD
+en_IE@euro	— English —	IRELAND	glibc-HEAD
+en_IL	— English —	ISRAEL	glibc-HEAD
+en_IN	— English —	INDIA	glibc-HEAD
+en_NG	— English —	NIGERIA	glibc-HEAD
+en_NZ	— English —	NEW ZEALAND	glibc-HEAD
+en_PH	— English —	PHILIPPINES	glibc-HEAD
+en_SC	— English —	SEYCHELLES	glibc-HEAD
+en_SG	— English —	SINGAPORE	glibc-HEAD
+en_US	— English —	UNITED STATES OF AMERICA	glibc-HEAD
+en_ZA	— English —	SOUTH AFRICA	glibc-HEAD
+en_ZM	— English —	ZAMBIA	glibc-HEAD
+en_ZW	— English —	ZIMBABWE	glibc-HEAD
+eo	— Esperanto —		glibc-HEAD
+es_AR	— Spanish —	ARGENTINA	glibc-HEAD
+es_BO	— Spanish —	BOLIVIA, PLURINATIONAL STATE OF	glibc-HEAD
+es_CL	— Spanish —	CHILE	glibc-HEAD
+es_CO	— Spanish —	COLOMBIA	glibc-HEAD
+es_CR	— Spanish —	COSTA RICA	glibc-HEAD
+es_CU	— Spanish —	CUBA	glibc-HEAD
+es_DO	— Spanish —	DOMINICAN REPUBLIC	mixed
+es_EC	— Spanish —	ECUADOR	glibc-HEAD
+es_ES	— Spanish —	SPAIN	glibc-HEAD
+es_ES@euro	— Spanish —	SPAIN	glibc-HEAD
+es_GT	— Spanish —	GUATEMALA	glibc-HEAD
+es_HN	— Spanish —	HONDURAS	glibc-HEAD
+es_MX	— Spanish —	MEXICO	glibc-HEAD
+es_NI	— Spanish —	NICARAGUA	glibc-HEAD
+es_PA	— Spanish —	PANAMA	glibc-HEAD
+es_PE	— Spanish —	PERU	glibc-HEAD
+es_PR	— Spanish —	PUERTO RICO	glibc-HEAD
+es_PY	— Spanish —	PARAGUAY	glibc-HEAD
+es_SV	— Spanish —	EL SALVADOR	glibc-HEAD
+es_US	— Spanish —	UNITED STATES OF AMERICA	glibc-HEAD
+es_UY	— Spanish —	URUGUAY	glibc-HEAD
+es_VE	— Spanish —	VENEZUELA, BOLIVARIAN REPUBLIC OF	glibc-HEAD
+et_EE	— Estonian —	ESTONIA	glibc-HEAD
+eu_ES	— Basque —	SPAIN	glibc-HEAD
+eu_ES@euro	— Basque —	SPAIN	glibc-HEAD
+fa_IR	— Persian —	IRAN, ISLAMIC REPUBLIC OF	glibc-HEAD
+ff_SN	— Fulah —	SENEGAL	mixed
+fi_FI	— Finnish —	FINLAND	glibc-HEAD
+fi_FI@euro	— Finnish —	FINLAND	glibc-HEAD
+fil_PH	— Filipino —	PHILIPPINES	glibc-HEAD
+fo_FO	— Faroese —	FAROE ISLANDS	glibc-HEAD
+fr_BE	— French —	BELGIUM	glibc-HEAD
+fr_BE@euro	— French —	BELGIUM	glibc-HEAD
+fr_CA	— French —	CANADA	glibc-HEAD
+fr_CH	— French —	SWITZERLAND	glibc-HEAD
+fr_FR	— French —	FRANCE	glibc-HEAD
+fr_FR@euro	— French —	FRANCE	glibc-HEAD
+fr_LU	— French —	LUXEMBOURG	glibc-HEAD
+fr_LU@euro	— French —	LUXEMBOURG	glibc-HEAD
+fur_IT	— Friulian —	ITALY	glibc-HEAD
+fy_DE	— Western Frisian —	GERMANY	glibc-HEAD
+fy_NL	— Western Frisian —	NETHERLANDS	glibc-HEAD
+ga_IE	— Irish —	IRELAND	glibc-HEAD
+ga_IE@euro	— Irish —	IRELAND	glibc-HEAD
+gd_GB	— Scottish Gaelic —	UNITED KINGDOM	mixed
+gez_ER	— Geez —	ERITREA	glibc-HEAD
+gez_ER@abegede	— Geez —	ERITREA	glibc-HEAD
+gez_ET	— Geez —	ETHIOPIA	glibc-HEAD
+gez_ET@abegede	— Geez —	ETHIOPIA	glibc-HEAD
+gl_ES	— Galician —	SPAIN	glibc-HEAD
+gl_ES@euro	— Galician —	SPAIN	glibc-HEAD
+gn_PY@Latin	— Guarani —	PARAGUAY	local
+gu_IN	— Gujarati —	INDIA	glibc-HEAD
+gv_GB	— Manx —	UNITED KINGDOM	glibc-HEAD
+hak_TW	— Hakka Chinese —	TAIWAN	mixed
+ha_NG	— Hausa —	NIGERIA	glibc-HEAD
+he_IL	— Hebrew —	ISRAEL	mixed
+hif_FJ	— Fiji Hindi —	FIJI	glibc-HEAD
+hi_IN	— Hindi —	INDIA	glibc-HEAD
+hne_IN	— Chhattisgarhi —	INDIA	glibc-HEAD
+hr_HR	— Croatian —	CROATIA	glibc-HEAD
+hsb_DE	— Upper Sorbian —	GERMANY	glibc-HEAD
+ht_HT	— Haitian —	HAITI	glibc-HEAD
+hu_HU	— Hungarian —	HUNGARY	glibc-HEAD
+hus_MX	— Huastec —	MEXICO	local
+hy_AM	— Armenian —	ARMENIA	glibc-HEAD
+i18n	— —		glibc-HEAD
+ia_FR	— Interlingua (International Auxiliary Language Association) —	FRANCE
+glibc-HEAD
+id_ID	— Indonesian —	INDONESIA	glibc-HEAD
+ig_NG	— Igbo —	NIGERIA	glibc-HEAD
+ik_CA	— Inupiaq —	CANADA	glibc-HEAD
+is_IS	— Icelandic —	ICELAND	glibc-HEAD
+it_CH	— Italian —	SWITZERLAND	glibc-HEAD
+it_IT	— Italian —	ITALY	glibc-HEAD
+it_IT@euro	— Italian —	ITALY	glibc-HEAD
+iu_CA	— Inuktitut —	CANADA	glibc-HEAD
+ja_JP	— Japanese —	JAPAN	glibc-HEAD
+kab_DZ	— Kabyle —	ALGERIA	mixed
+ka_GE	— Georgian —	GEORGIA	glibc-HEAD
+kk_KZ	— Kazakh —	KAZAKHSTAN	glibc-HEAD
+kl_GL	— Kalaallisut —	GREENLAND	glibc-HEAD
+km_KH	— Central Khmer —	CAMBODIA	glibc-HEAD
+kn_IN	— Kannada —	INDIA	glibc-HEAD
+kok_IN	— Konkani (macrolanguage) —	INDIA	glibc-HEAD
+ko_KR	— Korean —	KOREA, REPUBLIC OF	glibc-HEAD
+ks_IN	— Kashmiri —	INDIA	mixed
+ks_IN@devanagari	— Kashmiri —	INDIA	glibc-HEAD
+ku_TR	— Kurdish —	TURKEY	glibc-HEAD
+kw_GB	— Cornish —	UNITED KINGDOM	glibc-HEAD
+ky_KG	— Kirghiz —	KYRGYZSTAN	glibc-HEAD
+lb_LU	— Luxembourgish —	LUXEMBOURG	glibc-HEAD
+lg_UG	— Ganda —	UGANDA	glibc-HEAD
+li_BE	— Limburgan —	BELGIUM	glibc-HEAD
+lij_IT	— Ligurian —	ITALY	glibc-HEAD
+li_NL	— Limburgan —	NETHERLANDS	glibc-HEAD
+ln_CD	— Lingala —	CONGO, THE DEMOCRATIC REPUBLIC OF THE	mixed
+lo_LA	— Lao —	LAO PEOPLE'S DEMOCRATIC REPUBLIC	glibc-HEAD
+lt_LT	— Lithuanian —	LITHUANIA	glibc-HEAD
+lv_LV	— Latvian —	LATVIA	mixed
+lzh_TW	— Literary Chinese —	TAIWAN	mixed
+mag_IN	— Magahi —	INDIA	glibc-HEAD
+mai_IN	— Maithili —	INDIA	glibc-HEAD
+mai_NP	— Maithili —	NEPAL	glibc-HEAD
+mfe_MU	— Morisyen —	MAURITIUS	glibc-HEAD
+mg_MG	— Malagasy —	MADAGASCAR	glibc-HEAD
+mh_MH	— Marshallese —	MARSHALL ISLANDS	local
+mhr_RU	— Eastern Mari —	RUSSIAN FEDERATION	mixed
+mi_NZ	— Maori —	NEW ZEALAND	glibc-HEAD
+miq_NI	— Mískito —	NICARAGUA	mixed
+mjw_IN	— Karbi —	INDIA	glibc-HEAD
+mk_MK	— Macedonian —	MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF	mixed
+ml_IN	— Malayalam —	INDIA	glibc-HEAD
+mni_IN	— Manipuri —	INDIA	glibc-HEAD
+mn_MN	— Mongolian —	MONGOLIA	glibc-HEAD
+mnw_MM	— Mon —	MYANMAR	glibc-HEAD
+mr_IN	— Marathi —	INDIA	glibc-HEAD
+ms_MY	— Malay (macrolanguage) —	MALAYSIA	mixed
+mt_MT	— Maltese —	MALTA	glibc-HEAD
+my_MM	— Burmese —	MYANMAR	glibc-HEAD
+myv_RU	— Erzya —	RUSSIAN FEDERATION	local
+myv_RU@cyrillic	— Erzya —	RUSSIAN FEDERATION	local
+nah_MX	— Nahuatl languages —	MEXICO	None
+nan_TW	— Min Nan Chinese —	TAIWAN	mixed
+nan_TW@latin	— Min Nan Chinese —	TAIWAN	glibc-HEAD
+nb_NO	— Norwegian Bokmål —	NORWAY	glibc-HEAD
+nds_DE	— Low German —	GERMANY	glibc-HEAD
+nds_NL	— Low German —	NETHERLANDS	glibc-HEAD
+ne_NP	— Nepali —	NEPAL	glibc-HEAD
+nhn_MX	— Central Nahuatl —	MEXICO	glibc-HEAD
+niu_NU	— Niuean —	NIUE	mixed
+niu_NZ	— Niuean —	NEW ZEALAND	mixed
+nl_AW	— Dutch —	ARUBA	glibc-HEAD
+nl_BE	— Dutch —	BELGIUM	glibc-HEAD
+nl_BE@euro	— Dutch —	BELGIUM	glibc-HEAD
+nl_NL	— Dutch —	NETHERLANDS	glibc-HEAD
+nl_NL@euro	— Dutch —	NETHERLANDS	glibc-HEAD
+nn_NO	— Norwegian Nynorsk —	NORWAY	glibc-HEAD
+nr_ZA	— South Ndebele —	SOUTH AFRICA	glibc-HEAD
+nso_ZA	— Pedi —	SOUTH AFRICA	glibc-HEAD
+oc_FR	— Occitan (post 1500) —	FRANCE	glibc-HEAD
+om_ET	— Oromo —	ETHIOPIA	glibc-HEAD
+om_KE	— Oromo —	KENYA	glibc-HEAD
+or_IN	— Oriya —	INDIA	glibc-HEAD
+os_RU	— Ossetian —	RUSSIAN FEDERATION	glibc-HEAD
+pa_IN	— Panjabi —	INDIA	glibc-HEAD
+pap_AN	— Papiamento —	NETHERLANDS ANTILLES	mixed
+pap_AW	— Papiamento —	ARUBA	glibc-HEAD
+pap_CW	— Papiamento —	CURAÇAO	mixed
+pa_PK	— Panjabi —	PAKISTAN	glibc-HEAD
+pl_PL	— Polish —	POLAND	glibc-HEAD
+ps_AF	— Pushto —	AFGHANISTAN	glibc-HEAD
+pt_BR	— Portuguese —	BRAZIL	glibc-HEAD
+pt_PT	— Portuguese —	PORTUGAL	glibc-HEAD
+pt_PT@euro	— Portuguese —	PORTUGAL	glibc-HEAD
+quy_PE	— Ayacucho Quechua —	PERU	None
+quz_PE	— Cusco Quechua —	PERU	mixed
+raj_IN	— Rajasthani —	INDIA	glibc-HEAD
+ro_RO	— Romanian —	ROMANIA	glibc-HEAD
+ru_RU	— Russian —	RUSSIAN FEDERATION	mixed
+ru_UA	— Russian —	UKRAINE	glibc-HEAD
+rw_RW	— Kinyarwanda —	RWANDA	glibc-HEAD
+sah_RU	— Yakut —	RUSSIAN FEDERATION	glibc-HEAD
+sa_IN	— Sanskrit —	INDIA	glibc-HEAD
+sat_IN	— Santali —	INDIA	glibc-HEAD
+sc_IT	— Sardinian —	ITALY	glibc-HEAD
+sd_IN	— Sindhi —	INDIA	glibc-HEAD
+sd_IN@devanagari	— Sindhi —	INDIA	glibc-HEAD
+sq_ME	— Albanian —	MONTENEGRO	None
+se_NO	— Northern Sami —	NORWAY	glibc-HEAD
+sgs_LT	— Samogitian —	LITHUANIA	glibc-HEAD
+shn_MM	— Shan —	MYANMAR	glibc-HEAD
+shs_CA	— Shuswap —	CANADA	glibc-HEAD
+sid_ET	— Sidamo —	ETHIOPIA	glibc-HEAD
+si_LK	— Sinhala —	SRI LANKA	glibc-HEAD
+sk_SK	— Slovak —	SLOVAKIA	glibc-HEAD
+sl_SI	— Slovenian —	SLOVENIA	glibc-HEAD
+sm_WS	— Samoan —	SAMOA	glibc-HEAD
+so_DJ	— Somali —	DJIBOUTI	glibc-HEAD
+so_ET	— Somali —	ETHIOPIA	glibc-HEAD
+so_KE	— Somali —	KENYA	glibc-HEAD
+son_ML	— Songhai languages —	MALI	local
+so_SO	— Somali —	SOMALIA	glibc-HEAD
+sq_AL	— Albanian —	ALBANIA	glibc-HEAD
+sq_GR	— Albanian —	GREECE	None
+sq_IT	— Albanian —	ITALY	None
+sq_KV	— Albanian —	KOSOVO	local
+sq_MK	— Albanian —	MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF
+glibc-HEAD
+sq_RS	— Albanian —	SERBIA	None
+sq_TR	— Albanian —	TURKEY	None
+sr_ME	— Serbian —	MONTENEGRO	glibc-HEAD
+sr_RS	— Serbian —	SERBIA	glibc-HEAD
+sr_RS@latin	— Serbian —	SERBIA	glibc-HEAD
+ss_ZA	— Swati —	SOUTH AFRICA	glibc-HEAD
+st_ZA	— Southern Sotho —	SOUTH AFRICA	glibc-HEAD
+sv_FI	— Swedish —	FINLAND	glibc-HEAD
+sv_FI@euro	— Swedish —	FINLAND	glibc-HEAD
+sv_SE	— Swedish —	SWEDEN	glibc-HEAD
+sw_KE	— Swahili (macrolanguage) —	KENYA	mixed
+sw_TZ	— Swahili (macrolanguage) —	TANZANIA, UNITED REPUBLIC OF	mixed
+szl_PL	— Silesian —	POLAND	glibc-HEAD
+ta_IN	— Tamil —	INDIA	glibc-HEAD
+ta_LK	— Tamil —	SRI LANKA	glibc-HEAD
+tcy_IN	— Tulu —	INDIA	glibc-HEAD
+te_IN	— Telugu —	INDIA	glibc-HEAD
+tg_TJ	— Tajik —	TAJIKISTAN	glibc-HEAD
+the_NP	— Chitwania Tharu —	NEPAL	glibc-HEAD
+th_TH	— Thai —	THAILAND	glibc-HEAD
+ti_ER	— Tigrinya —	ERITREA	glibc-HEAD
+ti_ET	— Tigrinya —	ETHIOPIA	glibc-HEAD
+tig_ER	— Tigre —	ERITREA	glibc-HEAD
+tk_TM	— Turkmen —	TURKMENISTAN	glibc-HEAD
+tl_PH	— Tagalog —	PHILIPPINES	glibc-HEAD
+tn_ZA	— Tswana —	SOUTH AFRICA	glibc-HEAD
+to_TO	— Tonga (Tonga Islands) —	TONGA	glibc-HEAD
+tpi_PG	— Tok Pisin —	PAPUA NEW GUINEA	glibc-HEAD
+tr_CY	— Turkish —	CYPRUS	glibc-HEAD
+tr_TR	— Turkish —	TURKEY	glibc-HEAD
+ts_ZA	— Tsonga —	SOUTH AFRICA	glibc-HEAD
+tt_RU	— Tatar —	RUSSIAN FEDERATION	glibc-HEAD
+tt_RU@iqtelif	— Tatar —	RUSSIAN FEDERATION	glibc-HEAD
+ug_CN	— Uighur —	CHINA	glibc-HEAD
+uk_UA	— Ukrainian —	UKRAINE	glibc-HEAD
+unm_US	— Unami —	UNITED STATES OF AMERICA	glibc-HEAD
+ur_IN	— Urdu —	INDIA	glibc-HEAD
+ur_PK	— Urdu —	PAKISTAN	glibc-HEAD
+uz_UZ	— Uzbek —	UZBEKISTAN	glibc-HEAD
+uz_UZ@cyrillic	— Uzbek —	UZBEKISTAN	glibc-HEAD
+ve_ZA	— Venda —	SOUTH AFRICA	glibc-HEAD
+vi_VN	— Vietnamese —	VIET NAM	glibc-HEAD
+wa_BE	— Walloon —	BELGIUM	glibc-HEAD
+wa_BE@euro	— Walloon —	BELGIUM	glibc-HEAD
+wae_CH	— Walser —	SWITZERLAND	glibc-HEAD
+wal_ET	— Wolaytta —	ETHIOPIA	glibc-HEAD
+wo_SN	— Wolof —	SENEGAL	glibc-HEAD
+xh_ZA	— Xhosa —	SOUTH AFRICA	glibc-HEAD
+yi_US	— Yiddish —	UNITED STATES OF AMERICA	glibc-HEAD
+yo_NG	— Yoruba —	NIGERIA	glibc-HEAD
+yue_HK	— Yue Chinese —	HONG KONG	glibc-HEAD
+yuw_PG	— Yau (Morobe Province) —	PAPUA NEW GUINEA	glibc-HEAD
+zh_CN	— Chinese —	CHINA	glibc-HEAD
+zh_HK	— Chinese —	HONG KONG	glibc-HEAD
+zh_SG	— Chinese —	SINGAPORE	glibc-HEAD
+zh_TW	— Chinese —	TAIWAN	glibc-HEAD
+zu_ZA	— Zulu —	SOUTH AFRICA	glibc-HEAD

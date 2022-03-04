@@ -30,6 +30,7 @@ View the raw content of this file to understand the format.
   - [ ] Xorg 
   - [ ] Dwm 
   - [ ] User's own set of packages 
+- [ ] Rewrite everything for dialog ncurses menus 
 
 ### In Progress
 
