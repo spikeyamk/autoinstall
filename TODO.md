@@ -6,11 +6,11 @@ View the raw content of this file to understand the format.
 
 ### Todo
 
-- [ ] Implement SecureBoot 
 - [ ] Fixing bugs 
   - [ ] Locale selection  
   - [ ] Mounting and formatting NVMe drives
   - [ ] Allowing the script to run a BIOS installation in UEFI mode  
+- [ ] Implement SecureBoot 
 - [ ] Implement disk encryption  
 - [ ] Implement swap file or zram
   - [ ] With encryption
