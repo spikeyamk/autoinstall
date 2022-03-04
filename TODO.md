@@ -17,7 +17,6 @@ View the raw content of this file to understand the format.
   - [ ] With hibernation 
 - [ ] Implement swap with hibernation  
 - [ ] Adding an option for injecting a config file 
-  - [ ] Sub-task or description  
 - [ ] Improving the script reusability after crashing
   - [ ] Prohibit double uncommenting of config files
   - [ ] Add an option to reuse previous selected options 
