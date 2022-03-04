@@ -22,6 +22,7 @@ View the raw content of this file to understand the format.
   - [ ] Add an option to reuse previous selected options 
 - [ ] Fix the homepage ~1d #bug @jane  
   - [ ] Sub-task or description  
+- [ ] Add an option to select different locales 
 
 ### In Progress
 
