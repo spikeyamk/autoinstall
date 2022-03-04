@@ -25,10 +25,11 @@ View the raw content of this file to understand the format.
 - [ ] Add an option to select different locales 
 - [ ] Add error checking and scripting logs 
 - [ ] Automate video drivers setups 
-- [ ] Add support for different profiles
+- [ ] Add support for different profiles and different application changes
   - [ ] Minimal
   - [ ] Xorg 
-  - [ ] dwm 
+  - [ ] Dwm 
+  - [ ] User's own set of packages 
 
 ### In Progress
 
